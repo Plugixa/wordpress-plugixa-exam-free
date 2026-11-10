@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "plugixa-exam/my-exams",
+	"version": "1.0.0",
+	"title": "My exams",
+	"category": "widgets",
+	"icon": "clipboard",
+	"description": "Exams assigned to whoever is signed in, split by whether they can sit them now.",
+	"keywords": [
+		"exam",
+		"my exams",
+		"assigned",
+		"learner"
+	],
+	"textdomain": "plugixa-exam",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js"
+}

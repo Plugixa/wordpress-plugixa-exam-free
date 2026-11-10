@@ -1,0 +1,16 @@
+{
+    "name": "plugixa/plugixa-exam",
+    "description": "Exams, quizzes and assessments for WordPress. The free build carries the Freemius SDK, which handles licensing and updates for both builds, and the two libraries the certificate renderer needs: mPDF and chillerlan/php-qrcode. Libraries used only by premium features are declared in pro/composer.json and loaded from pro/vendor/.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.2",
+        "chillerlan/php-qrcode": "^6.0",
+        "freemius/wordpress-sdk": "^2.13",
+        "mpdf/mpdf": "^8.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

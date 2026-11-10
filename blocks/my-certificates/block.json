@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "plugixa-exam/my-certificates",
+	"version": "1.0.0",
+	"title": "My certificates",
+	"category": "widgets",
+	"icon": "awards",
+	"description": "Certificates the signed-in learner has earned.",
+	"keywords": [
+		"exam",
+		"certificate",
+		"my certificates",
+		"learner"
+	],
+	"textdomain": "plugixa-exam",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js"
+}

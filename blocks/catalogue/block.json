@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "plugixa-exam/catalogue",
+	"version": "1.0.0",
+	"title": "Exam catalogue",
+	"category": "widgets",
+	"icon": "welcome-learn-more",
+	"description": "Every exam that is open, or opening soon, as a list of cards.",
+	"keywords": [ "exam", "quiz", "test", "catalogue", "catalog" ],
+	"textdomain": "plugixa-exam",
+	"attributes": {
+		"limit": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js"
+}

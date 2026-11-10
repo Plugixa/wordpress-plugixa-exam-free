@@ -1,0 +1,18 @@
+{
+    "_comment": "The fonts this plugin declares to mPDF, and therefore the only ones the release ZIPs keep. mPDF ships ~88 MB of fonts; a build that keeps them all puts the free download over WordPress.org's upload limit. Services/Fonts.php reads this file and hands it to mPDF as its complete fontdata map, and the release script reads it to decide what to delete -- so the declaration and the shipped files cannot drift apart. mPDF decides what is AVAILABLE from the map, never from what is on disk: a family named here whose file is missing is a fatal at render time, not a warning.",
+    "families": {
+        "dejavusans": {
+            "R": "DejaVuSans.ttf",
+            "B": "DejaVuSans-Bold.ttf",
+            "I": "DejaVuSans-Oblique.ttf",
+            "BI": "DejaVuSans-BoldOblique.ttf",
+            "useOTL": 255,
+            "useKashida": 75
+        }
+    },
+    "extra_files": {
+        "files": [
+            "DejaVuinfo.txt"
+        ]
+    }
+}
