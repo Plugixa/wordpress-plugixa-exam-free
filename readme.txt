@@ -4,7 +4,7 @@ Tags: exam, quiz, assessment, elearning, education
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,8 +17,8 @@ Exams for WordPress: a question bank, an exam builder with random pools, a serve
 📚 Read the [**Documentation**](https://www.plugixa.com/documentation/plugixa-exam)
 🌐 Visit the official website [**Plugixa**](https://www.plugixa.com/)
 ✉️ Questions or support requests: [**Contact us**](https://www.plugixa.com/contact)
-
-[__Documentation__](https://www.plugixa.com/documentation/plugixa-exam) | [__Contact__](https://www.plugixa.com/contact) | [__Support Forum__](https://wordpress.org/support/plugin/plugixa-exam/) | [__Upgrade to Pro!__](https://www.plugixa.com/plugins/plugixa-exam#pricing)
+💬 Ask on the [**Support Forum**](https://wordpress.org/support/plugin/plugixa-exam/)
+🚀 [**Upgrade to Pro**](https://www.plugixa.com/plugins/plugixa-exam#pricing)
 
 Run your first exam in **3 simple steps**:
 
@@ -38,24 +38,41 @@ Records live in the plugin's **own database tables**, not in posts and post meta
 
 = Key Features of Plugixa Exam =
 
-* Fast, Material UI-based admin application
+**Questions**
+
 * Seven question types: multiple choice with one answer or several, true/false, short answer, essay, fill in the blanks and picture choice
 * Short answers matched case-insensitively, numerically with a tolerance, or against a regular expression
 * An explanation on every question, shown after marking, and a rubric on essays
 * Pictures in questions and on options, uploaded from the question editor, with a description for people who cannot see them
+* Import from CSV, Aiken, GIFT, Moodle XML and QTI; export to CSV, Moodle XML and QTI
+
+**Exams and access**
+
 * Exams built from sections: a fixed list, or a pool drawn by subject, tag, difficulty and type
 * Questions and their options shuffled independently
-* Server-side timer, a paper frozen at the start, autosave, pause and resume
-* A runner that degrades to an ordinary form post without JavaScript
-* Automatic marking on submission, and a marking queue with the rubric beside the answer
-* Results released immediately, when the exam closes, on a date you choose, or only when you say so
 * Access open to everybody, by role, by access code, or to a guest who gives a name and an email
 * Attempt caps and cooldowns enforced on the server
-* Import from CSV, Aiken, GIFT, Moodle XML and QTI; export to CSV, Moodle XML and QTI
+
+**Sitting the exam**
+
+* Server-side timer, a paper frozen at the start, autosave, pause and resume
+* A runner that degrades to an ordinary form post without JavaScript
+
+**Marking and results**
+
+* Automatic marking on submission, and a marking queue with the rubric beside the answer
+* Results released immediately, when the exam closes, on a date you choose, or only when you say so
+* Result emails with five editable templates
 * Certificates awarded automatically, numbered, rendered as a real PDF, with a public verification page
+
+**Learners**
+
 * A learner dashboard, plus blocks and shortcodes for assigned exams, results and certificates
 * An exam catalogue that shows a signed-in learner where they stand on every exam
-* Result emails with five editable templates
+
+**Administration**
+
+* Fast, Material UI-based admin application
 * Five seeded roles, a schedule calendar and a dashboard
 * GDPR export and erasure through WordPress's own privacy tools
 * Translation-ready, with right-to-left support
@@ -63,20 +80,31 @@ Records live in the plugin's **own database tables**, not in posts and post meta
 
 = Plugixa Exam Pro Features =
 
+**Questions and papers**
+
 * Seven more question types - ordering, matching, extended matching, hotspot, image matching, range and file upload
-* A drag-and-drop certificate designer, as many designs as you like, and a different certificate per exam
+* Reading and listening papers with highlighting, notes and play-limited recordings
+* Practice mode with per-question feedback, and LaTeX rendering
+* AI question drafting with your own API key
+
+**Monitoring and results**
+
 * Live invigilation with a real-time board
 * Analytics with item analysis and scheduled reports
 * A gradebook with letter grades and weighted transcripts
-* AI question drafting with your own API key
-* Bridges into Tutor LMS, LearnDash and LifterLMS
+* A drag-and-drop certificate designer, as many designs as you like, and a different certificate per exam
+* Version history, integrity signals and opt-in public leaderboards
+
+**Selling and connecting**
+
 * Selling exams through WooCommerce - access for a period, attempts, renewals and refunds
+* Bridges into Tutor LMS, LearnDash and LifterLMS
+* Webhooks, LTI 1.3 and API tokens
+
+**Organising**
+
 * Multilingual content - one exam in several languages, with one result set
 * Cohorts, prerequisites and custom fields
-* Reading and listening papers with highlighting, notes and play-limited recordings
-* Practice mode with per-question feedback, and LaTeX rendering
-* Version history, integrity signals and opt-in public leaderboards
-* Webhooks, LTI 1.3 and API tokens
 * A demo dataset
 * Priority support
 
@@ -109,15 +137,6 @@ The plugin stores what an exam plugin has to store: who sat what, when, what the
 ### 👨‍💻 Author
 
 [**Plugixa Exam**](https://www.plugixa.com/plugins/plugixa-exam) is developed by [**Plugixa**](https://www.plugixa.com/), building focused, well-documented WordPress plugins with an emphasis on performance, clean code and correct data.
-
-### 🛟 Documentation & Support
-
-Plugixa Exam is built to be usable without a manual, but it is documented in full.
-
-👉 Read the [Documentation](https://www.plugixa.com/documentation/plugixa-exam) - getting started, the question bank, the exam builder, marking, certificates, blocks and shortcodes
-👉 Ask on the [WordPress.org support forum](https://wordpress.org/support/plugin/plugixa-exam/)
-👉 Or [contact us directly](https://www.plugixa.com/contact)
-👉 Browse more plugins at [plugixa.com](https://www.plugixa.com/)
 
 = Shortcode Usage =
 
@@ -203,8 +222,6 @@ Translating the plugin and translating your questions are different jobs: the fi
 = Q. Does it need any external service? =
 
 Not to run an exam. Everything is read from and written to your own WordPress database. Freemius handles licensing and updates, and three premium features contact nothing until an administrator has entered an address or a key. All four are described under "External services" below.
-
-= Q. Where is the source for the JavaScript the plugin loads? =
 
 = Q. Where can I find the documentation? =
 
@@ -334,6 +351,9 @@ plugin ships no default platform and contacts nothing until you register one.
 
 == Changelog ==
 
+= 1.2.1 =
+* Fixed: saving a paper on the marking screen reset negative marks to 0 and raised the score. They now stay as they are, and a marker can change one down to the question's minimum score.
+
 = 1.2.0 =
 * Fixed: the exam's Fullscreen setting did nothing. "Offered" now gives the candidate a button, and "Required" covers the paper until they go fullscreen and again if they leave. A device that cannot go fullscreen carries on as normal.
 * New: a logo for the header of a paper in progress, under Settings.
@@ -413,6 +433,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Fixes negative marks being reset to 0 when a paper is saved on the marking screen. Marks already reset are not restored.
 
 = 1.2.0 =
 The Fullscreen setting now takes effect. Check any exam set to Required or Offered before updating a live site.

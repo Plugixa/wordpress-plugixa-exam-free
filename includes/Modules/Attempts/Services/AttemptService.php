@@ -714,15 +714,27 @@ final class AttemptService {
 			 * leaves a question for a colleague. It is NOT the same as 0, which is a mark.
 			 * An empty string arrives from a cleared number field and means the same thing.
 			 */
-			$awarded = ( null === $raw || '' === $raw )
-				? null
-				: max( 0.0, min( $possible, round( (float) $raw, 2 ) ) );
+			$current = $responses[ $question_id ];
+			$stored  = $current['points_awarded'];
+
+			/*
+			 * THE MARK ALREADY STORED IS RECOGNISED BEFORE ANY LIMIT IS APPLIED. The screen posts
+			 * the whole paper back, so a limit that ran first would read an untouched -0.33 as
+			 * an edit to 0: marking the essay beside it would quietly remove the penalty and
+			 * raise the total. A stored mark stays valid even if the question's minimum has
+			 * since been changed; only a mark somebody actually changes meets the limits.
+			 */
+			if ( null === $raw || '' === $raw ) {
+				$awarded = null;
+			} elseif ( null !== $stored && abs( round( (float) $raw, 2 ) - (float) $stored ) < 0.005 ) {
+				$awarded = (float) $stored;
+			} else {
+				$awarded = max( $this->lowest_mark( $question_id ), min( $possible, round( (float) $raw, 2 ) ) );
+			}
 
 			$comment = array_key_exists( 'grader_comment', $entry )
 				? sanitize_textarea_field( (string) $entry['grader_comment'] )
 				: null;
-
-			$current = $responses[ $question_id ];
 
 			/*
 			 * ────────────────────────────────────────────────────────────────────────────
@@ -923,8 +935,26 @@ final class AttemptService {
 			// What the examinee would see, so a marker can tell whether their own marking is
 			// already visible to the candidate.
 			'released' => $this->results_released( $exam, $attempt ),
-			'review'   => $this->review( $attempt ),
+			// Added here and not in `review()`, which the examinee's result page shares.
+			'review'   => array_map(
+				fn( array $item ): array => $item + array( 'points_minimum' => $this->lowest_mark( (int) $item['id'] ) ),
+				$this->review( $attempt )
+			),
 		);
+	}
+
+	/**
+	 * The lowest mark a marker may give a question.
+	 *
+	 * Zero, unless the question uses negative marking and sets a minimum below zero.
+	 *
+	 * @param int $question_id The question.
+	 */
+	private function lowest_mark( int $question_id ): float {
+		$question = $this->questions->find( $question_id );
+		$key      = null === $question ? array() : (array) ( $question['answer_key'] ?? array() );
+
+		return empty( $key['negative_marking'] ) ? 0.0 : min( 0.0, (float) ( $key['min_score'] ?? 0 ) );
 	}
 
 	/**

@@ -1,14 +1,14 @@
 {
-  "_Autocomplete-BrDFeiFY.js": {
-    "file": "js/Autocomplete-BrDFeiFY.js",
+  "_Autocomplete-Dp-v6kLD.js": {
+    "file": "js/Autocomplete-Dp-v6kLD.js",
     "name": "Autocomplete",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
       "src/main.tsx"
     ]
   },
-  "_Checkbox-CSy9-eFd.js": {
-    "file": "js/Checkbox-CSy9-eFd.js",
+  "_Checkbox-DhZrGRRa.js": {
+    "file": "js/Checkbox-DhZrGRRa.js",
     "name": "Checkbox",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
@@ -22,8 +22,8 @@
       "_PageContainer-C6QAgCaK.js"
     ]
   },
-  "_ConfirmDialog-BlUFssId.js": {
-    "file": "js/ConfirmDialog-BlUFssId.js",
+  "_ConfirmDialog-BJaEJxi4.js": {
+    "file": "js/ConfirmDialog-BJaEJxi4.js",
     "name": "ConfirmDialog",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
@@ -31,12 +31,12 @@
       "src/main.tsx"
     ]
   },
-  "_DataTable-COCCoLsv.js": {
-    "file": "js/DataTable-COCCoLsv.js",
+  "_DataTable-Dc_wDeCA.js": {
+    "file": "js/DataTable-Dc_wDeCA.js",
     "name": "DataTable",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
-      "_ListToolbar-DpQ7NNeG.js"
+      "_ListToolbar-C4lfnNsC.js"
     ]
   },
   "_DialogContent-Vn-9GQhT.js": {
@@ -78,13 +78,13 @@
       "_PageContainer-C6QAgCaK.js"
     ]
   },
-  "_ListToolbar-DpQ7NNeG.js": {
-    "file": "js/ListToolbar-DpQ7NNeG.js",
+  "_ListToolbar-C4lfnNsC.js": {
+    "file": "js/ListToolbar-C4lfnNsC.js",
     "name": "ListToolbar",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
-      "_Autocomplete-BrDFeiFY.js",
-      "_Checkbox-CSy9-eFd.js",
+      "_Autocomplete-Dp-v6kLD.js",
+      "_Checkbox-DhZrGRRa.js",
       "_shared-zRpmkYtl.js",
       "_toPropertyKey-BQzM4BSZ.js",
       "_Tabs-BWt5k7eY.js",
@@ -93,12 +93,12 @@
       "_EventManager-G_nqOcD3.js"
     ]
   },
-  "_MinimalTreeViewStore-ItmxjMjC.js": {
-    "file": "js/MinimalTreeViewStore-ItmxjMjC.js",
+  "_MinimalTreeViewStore-fWAiP8FX.js": {
+    "file": "js/MinimalTreeViewStore-fWAiP8FX.js",
     "name": "MinimalTreeViewStore",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
-      "_Checkbox-CSy9-eFd.js",
+      "_Checkbox-DhZrGRRa.js",
       "src/main.tsx",
       "_EventManager-G_nqOcD3.js"
     ]
@@ -121,8 +121,8 @@
       "_PageContainer-C6QAgCaK.js"
     ]
   },
-  "_RowActions--4O8mq5Z.js": {
-    "file": "js/RowActions--4O8mq5Z.js",
+  "_RowActions-C__9XzZH.js": {
+    "file": "js/RowActions-C__9XzZH.js",
     "name": "RowActions",
     "imports": [
       "_PageContainer-C6QAgCaK.js",
@@ -218,7 +218,7 @@
     ]
   },
   "src/main.tsx": {
-    "file": "js/main-BEXmfHuJ.js",
+    "file": "js/main-fxPx_3E5.js",
     "name": "main",
     "src": "src/main.tsx",
     "isEntry": true,
@@ -252,7 +252,7 @@
     ]
   },
   "src/modules/app-manager/AppManagerPage.tsx": {
-    "file": "js/AppManagerPage-BagbIAqO.js",
+    "file": "js/AppManagerPage-DRNlyDph.js",
     "name": "AppManagerPage",
     "src": "src/modules/app-manager/AppManagerPage.tsx",
     "isDynamicEntry": true,
@@ -267,7 +267,7 @@
     ]
   },
   "src/modules/attempts/AttemptsPage.tsx": {
-    "file": "js/AttemptsPage-C8lJMIDx.js",
+    "file": "js/AttemptsPage-Conl1FUG.js",
     "name": "AttemptsPage",
     "src": "src/modules/attempts/AttemptsPage.tsx",
     "isDynamicEntry": true,
@@ -275,17 +275,17 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ListToolbar-C4lfnNsC.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "src/main.tsx",
-      "_DataTable-COCCoLsv.js",
-      "_RowActions--4O8mq5Z.js",
+      "_DataTable-Dc_wDeCA.js",
+      "_RowActions-C__9XzZH.js",
       "_number-BT0Xbv6j.js",
       "_api-B57-khqS.js"
     ]
   },
   "src/modules/attempts/GradePage.tsx": {
-    "file": "js/GradePage-DkmEnTQd.js",
+    "file": "js/GradePage-B8Z4CfhR.js",
     "name": "GradePage",
     "src": "src/modules/attempts/GradePage.tsx",
     "isDynamicEntry": true,
@@ -298,13 +298,13 @@
     ]
   },
   "src/modules/calendar/CalendarPage.tsx": {
-    "file": "js/CalendarPage-DxGuMSvj.js",
+    "file": "js/CalendarPage-4n1cmoNf.js",
     "name": "CalendarPage",
     "src": "src/modules/calendar/CalendarPage.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_PageContainer-C6QAgCaK.js",
-      "_Checkbox-CSy9-eFd.js",
+      "_Checkbox-DhZrGRRa.js",
       "_PageHeader-C_Ct6Ipp.js",
       "_DialogContent-Vn-9GQhT.js",
       "_toPropertyKey-BQzM4BSZ.js",
@@ -312,12 +312,12 @@
       "_Tabs-BWt5k7eY.js",
       "src/main.tsx",
       "_EventManager-G_nqOcD3.js",
-      "_MinimalTreeViewStore-ItmxjMjC.js",
+      "_MinimalTreeViewStore-fWAiP8FX.js",
       "_Close-DocMLyyr.js"
     ]
   },
   "src/modules/certificates/CertificatesPage.tsx": {
-    "file": "js/CertificatesPage-2Z569Jmu.js",
+    "file": "js/CertificatesPage-Bj7RjXbl.js",
     "name": "CertificatesPage",
     "src": "src/modules/certificates/CertificatesPage.tsx",
     "isDynamicEntry": true,
@@ -325,18 +325,18 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ListToolbar-C4lfnNsC.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "_Link-Bkp-S42Z.js",
       "_Tabs-BWt5k7eY.js",
       "src/main.tsx",
-      "_DataTable-COCCoLsv.js",
-      "_RowActions--4O8mq5Z.js",
+      "_DataTable-Dc_wDeCA.js",
+      "_RowActions-C__9XzZH.js",
       "_DownloadOutlined-coz6FOB9.js"
     ]
   },
   "src/modules/dashboard/DashboardPage.tsx": {
-    "file": "js/DashboardPage-DbHZryOW.js",
+    "file": "js/DashboardPage-BWmmckkR.js",
     "name": "DashboardPage",
     "src": "src/modules/dashboard/DashboardPage.tsx",
     "isDynamicEntry": true,
@@ -348,7 +348,7 @@
     ]
   },
   "src/modules/exams/ExamForm.tsx": {
-    "file": "js/ExamForm-D_eC_vDz.js",
+    "file": "js/ExamForm-D1Rb8FmZ.js",
     "name": "ExamForm",
     "src": "src/modules/exams/ExamForm.tsx",
     "isDynamicEntry": true,
@@ -357,7 +357,7 @@
       "_useToast-B-W4Y4eg.js",
       "_shared-zRpmkYtl.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
+      "_ListToolbar-C4lfnNsC.js",
       "_DialogContent-Vn-9GQhT.js",
       "_Tabs-BWt5k7eY.js",
       "src/main.tsx",
@@ -369,7 +369,7 @@
     ]
   },
   "src/modules/exams/ExamsPage.tsx": {
-    "file": "js/ExamsPage-Bpj0-uso.js",
+    "file": "js/ExamsPage-DGymz7Ng.js",
     "name": "ExamsPage",
     "src": "src/modules/exams/ExamsPage.tsx",
     "isDynamicEntry": true,
@@ -377,17 +377,17 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ListToolbar-C4lfnNsC.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "src/main.tsx",
-      "_DataTable-COCCoLsv.js",
-      "_RowActions--4O8mq5Z.js",
+      "_DataTable-Dc_wDeCA.js",
+      "_RowActions-C__9XzZH.js",
       "_api-B57-khqS.js",
       "_EditOutlined-D3GiP_ou.js"
     ]
   },
   "src/modules/importexport/ImportExportPage.tsx": {
-    "file": "js/ImportExportPage-y1JuJaU_.js",
+    "file": "js/ImportExportPage-BMdBwjRf.js",
     "name": "ImportExportPage",
     "src": "src/modules/importexport/ImportExportPage.tsx",
     "isDynamicEntry": true,
@@ -404,7 +404,7 @@
     ]
   },
   "src/modules/notifications/NotificationsPage.tsx": {
-    "file": "js/NotificationsPage-CCBQWfdB.js",
+    "file": "js/NotificationsPage-BZ3VZkxO.js",
     "name": "NotificationsPage",
     "src": "src/modules/notifications/NotificationsPage.tsx",
     "isDynamicEntry": true,
@@ -412,25 +412,25 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
+      "_ListToolbar-C4lfnNsC.js",
       "_Tabs-BWt5k7eY.js",
       "src/main.tsx",
-      "_DataTable-COCCoLsv.js",
-      "_RowActions--4O8mq5Z.js",
+      "_DataTable-Dc_wDeCA.js",
+      "_RowActions-C__9XzZH.js",
       "_RichTextField-EJtTQBVr.js",
       "_SaveOutlined-DHbNDNv5.js"
     ]
   },
   "src/modules/questions/QuestionForm.tsx": {
-    "file": "js/QuestionForm-B4oh1IcK.js",
+    "file": "js/QuestionForm-SlEcPAGe.js",
     "name": "QuestionForm",
     "src": "src/modules/questions/QuestionForm.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
-      "_Autocomplete-BrDFeiFY.js",
-      "_Checkbox-CSy9-eFd.js",
+      "_Autocomplete-Dp-v6kLD.js",
+      "_Checkbox-DhZrGRRa.js",
       "_PageHeader-C_Ct6Ipp.js",
       "src/main.tsx",
       "_RichTextField-EJtTQBVr.js",
@@ -440,7 +440,7 @@
     ]
   },
   "src/modules/questions/QuestionsPage.tsx": {
-    "file": "js/QuestionsPage-CpNKWCso.js",
+    "file": "js/QuestionsPage-BWIOJlKW.js",
     "name": "QuestionsPage",
     "src": "src/modules/questions/QuestionsPage.tsx",
     "isDynamicEntry": true,
@@ -448,36 +448,36 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ListToolbar-DpQ7NNeG.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ListToolbar-C4lfnNsC.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "src/main.tsx",
-      "_DataTable-COCCoLsv.js",
-      "_RowActions--4O8mq5Z.js",
+      "_DataTable-Dc_wDeCA.js",
+      "_RowActions-C__9XzZH.js",
       "_api-DcVPJtMC.js",
       "_api-CoBpBB3w.js",
       "_EditOutlined-D3GiP_ou.js"
     ]
   },
   "src/modules/roles/RolesPage.tsx": {
-    "file": "js/RolesPage-C1c1EdZS.js",
+    "file": "js/RolesPage-X1pJn1LD.js",
     "name": "RolesPage",
     "src": "src/modules/roles/RolesPage.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
-      "_Checkbox-CSy9-eFd.js",
+      "_Checkbox-DhZrGRRa.js",
       "_PageHeader-C_Ct6Ipp.js",
       "_Tabs-BWt5k7eY.js",
       "_TableCell-1NaYYftd.js",
       "_TableRow-z29kJoIF.js",
       "src/main.tsx",
-      "_RowActions--4O8mq5Z.js",
+      "_RowActions-C__9XzZH.js",
       "_SaveOutlined-DHbNDNv5.js"
     ]
   },
   "src/modules/settings/SettingsPage.tsx": {
-    "file": "js/SettingsPage-BXfLqZxK.js",
+    "file": "js/SettingsPage-C_wx8vuH.js",
     "name": "SettingsPage",
     "src": "src/modules/settings/SettingsPage.tsx",
     "isDynamicEntry": true,
@@ -493,7 +493,7 @@
     ]
   },
   "src/modules/subjects/SubjectsPage.tsx": {
-    "file": "js/SubjectsPage-ClaDvtCM.js",
+    "file": "js/SubjectsPage-DUEPlJ_g.js",
     "name": "SubjectsPage",
     "src": "src/modules/subjects/SubjectsPage.tsx",
     "isDynamicEntry": true,
@@ -502,16 +502,16 @@
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
       "_DialogContent-Vn-9GQhT.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "src/main.tsx",
-      "_MinimalTreeViewStore-ItmxjMjC.js",
+      "_MinimalTreeViewStore-fWAiP8FX.js",
       "_RichTextField-EJtTQBVr.js",
       "_api-DcVPJtMC.js",
       "_EditOutlined-D3GiP_ou.js"
     ]
   },
   "src/modules/tags/TagsPage.tsx": {
-    "file": "js/TagsPage-9h-WDHTs.js",
+    "file": "js/TagsPage-mdRmxcTO.js",
     "name": "TagsPage",
     "src": "src/modules/tags/TagsPage.tsx",
     "isDynamicEntry": true,
@@ -519,9 +519,9 @@
       "_PageContainer-C6QAgCaK.js",
       "_useToast-B-W4Y4eg.js",
       "_PageHeader-C_Ct6Ipp.js",
-      "_ConfirmDialog-BlUFssId.js",
+      "_ConfirmDialog-BJaEJxi4.js",
       "src/main.tsx",
-      "_RowActions--4O8mq5Z.js",
+      "_RowActions-C__9XzZH.js",
       "_Close-DocMLyyr.js",
       "_EditOutlined-D3GiP_ou.js"
     ]
