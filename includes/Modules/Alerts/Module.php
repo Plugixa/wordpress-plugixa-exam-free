@@ -80,7 +80,20 @@ final class Module implements ModuleInterface {
 	 * @param Container $container The plugin container.
 	 */
 	public function register_services( Container $container ): void {
-		unset( $container );
+		// PRIVACY LIVES HERE, not in `register_hooks()`, which does not run when this app is
+		// switched off in the App Manager. Data the app stored is still there, and a
+		// subject-access or erasure request must still reach it (NFR-ORG-6).
+		/*
+		 * And when a privacy erasure anonymises an attempt. "Your result is ready" in the
+		 * person's own feed and "needs marking" in a grader's both point at somebody who
+		 * asked to be forgotten, and the answers there were to mark are already gone.
+		 */
+		add_action(
+			'plugixa_exam_attempt_anonymised',
+			static function ( int $attempt_id ) use ( $container ): void {
+				$container->get( AlertRepository::class )->forget( 'attempt', $attempt_id );
+			}
+		);
 	}
 
 	/**
@@ -144,6 +157,7 @@ final class Module implements ModuleInterface {
 			10,
 			2
 		);
+
 
 		add_action(
 			self::PRUNE_HOOK,

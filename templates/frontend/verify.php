@@ -85,10 +85,13 @@ require plugixa_exam_get_template( 'parts/header.php' );
 	</div>
 
 	<ul class="pxe-facts pxe-facts--large">
-		<li class="pxe-facts__item">
-			<span class="pxe-facts__label"><?php esc_html_e( 'Awarded to', 'plugixa-exam' ); ?></span>
-			<span class="pxe-facts__value"><?php echo esc_html( $pxe_verify['recipient'] ); ?></span>
-		</li>
+		<?php // Blank once the holder's personal data has been erased: no row, not an empty one. ?>
+		<?php if ( '' !== $pxe_verify['recipient'] ) : ?>
+			<li class="pxe-facts__item">
+				<span class="pxe-facts__label"><?php esc_html_e( 'Awarded to', 'plugixa-exam' ); ?></span>
+				<span class="pxe-facts__value"><?php echo esc_html( $pxe_verify['recipient'] ); ?></span>
+			</li>
+		<?php endif; ?>
 
 		<?php if ( '' !== $pxe_verify['exam'] ) : ?>
 			<li class="pxe-facts__item">

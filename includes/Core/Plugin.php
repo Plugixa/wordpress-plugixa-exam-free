@@ -79,6 +79,9 @@ final class Plugin {
 		// lets WordPress answer.
 		\PlugixaExam\Core\Security\Permissions::register_hooks();
 
+		// WordPress image captions inserted by the editors' "Add media" button, as <figure>.
+		\PlugixaExam\Core\Content\Captions::register_hooks();
+
 		$this->modules->discover();
 		$this->modules->register_hooks();
 

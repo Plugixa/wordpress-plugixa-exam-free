@@ -64,7 +64,26 @@ final class Module implements ModuleInterface {
 	}
 
 	public function register_services( Container $container ): void {
-		unset( $container );
+		/*
+		 * The outbox is a mailbox: it holds who was written to, and what was said to them.
+		 * HERE, not in `register_hooks()` — this app can be switched off in the App Manager,
+		 * and `register_hooks()` then does not run. It used to sit there under a comment
+		 * promising the opposite; switching notifications off must not also switch off the
+		 * site's ability to answer for the mail it has already sent (NFR-ORG-6).
+		 */
+		$container->get( NotificationPrivacy::class )->register_hooks();
+
+		// Retention: failed messages older than the site keeps them. Off unless a period is set.
+		add_action(
+			'plugixa_exam_privacy_retention',
+			static function () use ( $container ): void {
+				$days = $container->get( Settings::class )->int( 'privacy_failed_days', 0 );
+
+				if ( $days > 0 ) {
+					$container->get( QueueRepository::class )->prune_failed( $days );
+				}
+			}
+		);
 	}
 
 	public function register_routes( Container $container ): void {
@@ -75,13 +94,6 @@ final class Module implements ModuleInterface {
 		add_filter( 'plugixa_exam_admin_i18n_strings', array( $this, 'strings' ) );
 		add_filter( 'plugixa_exam_settings_defaults', array( $this, 'settings_defaults' ) );
 
-		/*
-		 * The outbox is a mailbox: it holds who was written to, and what was said to them.
-		 * Registered with no settings check of any kind, for the same reason the Attempts
-		 * one is — switching notifications off must not also switch off the site's ability
-		 * to answer for the mail it has already sent.
-		 */
-		$container->get( NotificationPrivacy::class )->register_hooks();
 
 		$notifier = new AttemptNotifier(
 			$container->get( Mailer::class ),

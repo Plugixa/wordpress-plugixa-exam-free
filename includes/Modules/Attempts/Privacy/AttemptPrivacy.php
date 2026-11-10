@@ -9,7 +9,7 @@ namespace PlugixaExam\Modules\Attempts\Privacy;
 
 use PlugixaExam\Core\Database\Schema as Db;
 use PlugixaExam\Modules\Attempts\Repositories\AttemptRepository;
-use WP_User;
+use PlugixaExam\Core\Privacy\Subject;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -205,9 +205,47 @@ final class AttemptPrivacy {
 				),
 				'value' => $answer,
 			);
+
+			// What a grader wrote about this one answer. It is about the person, so it is theirs to see.
+			$comment = trim( (string) ( $response['grader_comment'] ?? '' ) );
+
+			if ( '' !== $comment ) {
+				$fields[] = array(
+					'name'  => sprintf(
+						/* translators: %d: position of the answer within the attempt. */
+						__( 'Grader comment on answer %d', 'plugixa-exam' ),
+						$index + 1
+					),
+					'value' => esc_html( $comment ),
+				);
+			}
 		}
 
-		return $fields;
+		/*
+		 * THE INTEGRITY RECORD. When a site switches on client details it holds the IP address
+		 * and browser the paper was sat from — the most plainly "personal data" thing in the
+		 * whole attempt — and the export used to leave it out.
+		 */
+		$signals = trim( (string) ( $row['integrity_signals'] ?? '' ) );
+
+		if ( '' !== $signals ) {
+			$fields[] = array(
+				'name'  => __( 'Integrity record (IP address, browser, focus changes)', 'plugixa-exam' ),
+				'value' => $this->readable( json_decode( $signals, true ) ?? $signals ),
+			);
+		}
+
+		/**
+		 * Add lines to one attempt's entry in a personal-data export.
+		 *
+		 * For data a module keeps against an attempt — uploaded files, passage notes, an LTI
+		 * identity. Matching the person is already done; the module only describes what it
+		 * holds for this attempt. Values are HTML to WordPress, so escape text.
+		 *
+		 * @param array<int, array{name: string, value: string}> $fields Name/value pairs.
+		 * @param array<string, mixed>                           $row    The attempt row.
+		 */
+		return (array) apply_filters( 'plugixa_exam_export_attempt_fields', $fields, $row );
 	}
 
 	/**
@@ -295,18 +333,11 @@ final class AttemptPrivacy {
 		$hard_delete = (bool) apply_filters( 'plugixa_exam_erase_attempt_delete', false, $rows[0] );
 
 		foreach ( $rows as $row ) {
-			$id = (int) $row['id'];
-
-			$this->attempts->delete_responses( $id );
+			$this->anonymise( $row, $email, self::REASON_REQUEST );
 
 			if ( $hard_delete ) {
-				$this->attempts->delete( $id );
-
-				continue;
+				$this->attempts->delete( (int) $row['id'] );
 			}
-
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->update prepares.
-			$wpdb->update( Db::table( 'attempts' ), $this->anonymised_columns( $row ), array( 'id' => $id ) );
 		}
 
 		$count    = count( $rows );
@@ -336,6 +367,58 @@ final class AttemptPrivacy {
 			 */
 			'done'           => $count < self::PER_PAGE,
 		);
+	}
+
+	/** Anonymised because the person asked, through Tools → Erase Personal Data. */
+	public const REASON_REQUEST = 'request';
+
+	/** Anonymised because the site's retention period ran out. Nobody asked. */
+	public const REASON_RETENTION = 'retention';
+
+	/**
+	 * Anonymise one attempt and tell every module that keeps something against it.
+	 *
+	 * The single place an attempt is anonymised, for an erasure request and for the
+	 * retention sweep alike, so the two cannot drift apart in what they clear.
+	 *
+	 * @param array<string, mixed> $row    The attempt.
+	 * @param string               $email  The address a request was made for; '' for retention.
+	 * @param string               $reason One of the REASON_ constants.
+	 */
+	public function anonymise( array $row, string $email, string $reason ): void {
+		global $wpdb;
+
+		$id = (int) $row['id'];
+
+		$this->attempts->delete_responses( $id );
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->update prepares.
+		$wpdb->update( Db::table( 'attempts' ), $this->anonymised_columns( $row ), array( 'id' => $id ) );
+
+		/**
+		 * An attempt was anonymised.
+		 *
+		 * Anything a module keeps against an attempt — a certificate, uploaded files,
+		 * passage notes, an LTI launch — is still sitting there with the person's name on
+		 * it unless that module listens here. Fired after the attempt row is cleared, once
+		 * per attempt.
+		 *
+		 * IN BOTH ERASURE MODES. A site that deletes outright gets this first and the
+		 * delete after, so every child is cleaned the same way whichever policy the site
+		 * runs. `entity_purged` alone cannot do it: an administrator deleting an attempt
+		 * to allow a retake fires that too, and must not, for instance, withdraw an LTI
+		 * learner's identity along with it.
+		 *
+		 * `$reason` SAYS WHO WANTED IT. `request`: the person asked to be forgotten.
+		 * `retention`: the site's retention period ran out and nobody asked. A module whose
+		 * data has a purpose of its own that outlives the attempt — a certificate, which the
+		 * holder relies on being verifiable — honours a request and survives retention.
+		 *
+		 * @param int    $attempt_id Attempt id.
+		 * @param string $email      The address a request was made for; '' for retention.
+		 * @param string $reason     `request` or `retention`.
+		 */
+		do_action( 'plugixa_exam_attempt_anonymised', $id, $email, $reason );
 	}
 
 	/**
@@ -384,24 +467,16 @@ final class AttemptPrivacy {
 	 * @return array<int, array<string, mixed>>
 	 */
 	private function find( string $email, int $page ): array {
-		$email = sanitize_email( $email );
+		$subject = Subject::from_email( $email );
 
-		if ( '' === $email ) {
+		if ( null === $subject ) {
 			return array();
 		}
 
-		$user    = get_user_by( 'email', $email );
-		$user_id = $user instanceof WP_User ? (int) $user->ID : 0;
+		[ $where, $args ] = $subject->where( 't.user_id', 't.guest_email' );
 
-		$query = $this->attempts->query();
-
-		if ( $user_id > 0 ) {
-			$query->where( '(t.user_id = %d OR t.guest_email = %s)', array( $user_id, $email ) );
-		} else {
-			$query->where( 't.guest_email = %s', array( $email ) );
-		}
-
-		return $query
+		return $this->attempts->query()
+			->where( $where, $args )
 			->order_by( 't.id', 'ASC' )
 			->paginate( self::PER_PAGE, ( $page - 1 ) * self::PER_PAGE )
 			->get();

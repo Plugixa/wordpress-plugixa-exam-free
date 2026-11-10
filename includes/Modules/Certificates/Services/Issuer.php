@@ -225,7 +225,26 @@ final class Issuer {
 	 * @param array<string, mixed> $certificate The certificate row.
 	 */
 	private function withdrawn_by_remark( array $certificate ): bool {
-		return ! empty( $certificate['revoked'] ) && empty( $certificate['revoked_by'] );
+		if ( empty( $certificate['revoked'] ) || ! empty( $certificate['revoked_by'] ) ) {
+			return false;
+		}
+
+		// An erasure withdraws with nobody recorded too — and must never be undone.
+		if ( \PlugixaExam\Modules\Certificates\Privacy\CertificatePrivacy::is_forgotten( $certificate ) ) {
+			return false;
+		}
+
+		/**
+		 * Whether a withdrawal nobody signed for may be lifted by a re-mark.
+		 *
+		 * "Nobody recorded" is not only a re-mark: anything withdrawing from a request with
+		 * no signed-in user — a payment refund arriving by webhook, say — looks the same.
+		 * The module that withdrew it answers false here.
+		 *
+		 * @param bool                 $lift        Default true.
+		 * @param array<string, mixed> $certificate The withdrawn certificate.
+		 */
+		return (bool) apply_filters( 'plugixa_exam_certificate_remark_may_reinstate', true, $certificate );
 	}
 
 	/**

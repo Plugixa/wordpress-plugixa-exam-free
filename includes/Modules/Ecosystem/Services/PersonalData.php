@@ -7,6 +7,8 @@ declare( strict_types = 1 );
 
 namespace PlugixaExam\Modules\Ecosystem\Services;
 
+use PlugixaExam\Core\Settings;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -43,9 +45,92 @@ final class PersonalData {
 	 */
 	private const PREFIX = 'plugixa-exam';
 
+	/** Calls to one eraser before giving up on `done`, so a broken provider cannot hang a delete. */
+	private const MAX_PASSES = 100;
+
+	public function __construct( private readonly Settings $settings ) {}
+
 	public function register_hooks(): void {
 		add_filter( 'wp_privacy_personal_data_exporters', array( $this, 'exporters' ) );
 		add_filter( 'wp_privacy_personal_data_erasers', array( $this, 'erasers' ) );
+
+		/*
+		 * `delete_user`, NOT `deleted_user`: the account must still exist, because every
+		 * provider finds a person from their email address and the address is gone with
+		 * the row. Multisite removes a user from the network through its own action.
+		 */
+		add_action( 'delete_user', array( $this, 'on_delete_user' ), 10, 2 );
+		add_action( 'wpmu_delete_user', array( $this, 'on_delete_user' ), 10, 1 );
+	}
+
+	/**
+	 * An account is being deleted: erase its exam data too, if the site asked for that.
+	 *
+	 * ════════════════════════════════════════════════════════════════════════════════════
+	 * OFF BY DEFAULT, AND SKIPPED WHEN CONTENT IS REASSIGNED.
+	 *
+	 * Until 1.3.0 deleting an account left its exam results alone, and sites rely on that —
+	 * a school deleting last year's leavers still reports on last year's cohort. Turning the
+	 * erasure on silently in an update would anonymise those results on the next tidy-up,
+	 * so it is a setting (`privacy_erase_on_user_delete`) a site switches on knowingly.
+	 *
+	 * "Attribute all content to another user" on the delete screen means the administrator
+	 * wants the account's work kept under somebody else. Erasing it then would contradict
+	 * the choice they just made, so a reassigning delete is left alone even when the setting
+	 * is on.
+	 * ════════════════════════════════════════════════════════════════════════════════════
+	 *
+	 * Runs exactly what Tools → Erase Personal Data runs, provider by provider, so an
+	 * account deletion and an erasure request can never disagree about what goes.
+	 *
+	 * @param int      $user_id  The account being deleted.
+	 * @param int|null $reassign Who its content goes to, or null.
+	 */
+	public function on_delete_user( int $user_id, $reassign = null ): void {
+		if ( null !== $reassign && (int) $reassign > 0 ) {
+			return;
+		}
+
+		if ( ! $this->settings->bool( 'privacy_erase_on_user_delete', false ) ) {
+			return;
+		}
+
+		$user = get_userdata( $user_id );
+
+		if ( false === $user || '' === (string) $user->user_email ) {
+			return;
+		}
+
+		$this->erase_everywhere( (string) $user->user_email );
+	}
+
+	/**
+	 * Run every provider's eraser for one address until each says it is done.
+	 *
+	 * A provider that throws is skipped rather than allowed to abort the account deletion
+	 * it was asked to follow — the user row goes regardless, and a half-run erasure is
+	 * still more than none.
+	 *
+	 * @param string $email The address.
+	 */
+	public function erase_everywhere( string $email ): void {
+		foreach ( $this->providers() as $provider ) {
+			if ( ! is_callable( $provider['erase'] ) ) {
+				continue;
+			}
+
+			try {
+				for ( $page = 1; $page <= self::MAX_PASSES; $page++ ) {
+					$result = (array) call_user_func( $provider['erase'], $email, $page );
+
+					if ( ! empty( $result['done'] ) ) {
+						break;
+					}
+				}
+			} catch ( \Throwable $e ) {
+				continue;
+			}
+		}
 	}
 
 	/**

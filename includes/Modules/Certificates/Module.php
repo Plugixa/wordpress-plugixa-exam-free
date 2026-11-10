@@ -78,7 +78,10 @@ final class Module implements ModuleInterface {
 	}
 
 	public function register_services( Container $container ): void {
-		unset( $container );
+		// PRIVACY LIVES HERE, not in `register_hooks()`, which does not run when this app is
+		// switched off in the App Manager. Data the app stored is still there, and a
+		// subject-access or erasure request must still reach it (NFR-ORG-6).
+		$container->get( Privacy\CertificatePrivacy::class )->register_hooks();
 	}
 
 	public function register_routes( Container $container ): void {
@@ -86,6 +89,16 @@ final class Module implements ModuleInterface {
 	}
 
 	public function register_hooks( Container $container ): void {
+		// Its paragraph in the suggested privacy policy, while this app is on.
+		add_filter(
+			'plugixa_exam_privacy_policy_paragraphs',
+			static function ( array $paragraphs ): array {
+				$paragraphs[] = __( 'If you pass an exam that awards a certificate, we keep the certificate with your name on it. Anyone you give its link or number to can check it on a public page that shows your name, the exam and the date.', 'plugixa-exam' );
+
+				return $paragraphs;
+			}
+		);
+
 		add_filter( 'plugixa_exam_admin_i18n_strings', array( $this, 'strings' ) );
 		add_filter( 'plugixa_exam_settings_defaults', array( $this, 'settings_defaults' ) );
 

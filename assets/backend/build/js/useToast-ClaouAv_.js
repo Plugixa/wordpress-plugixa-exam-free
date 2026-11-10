@@ -1,0 +1,1 @@
+import{Pr as e,jr as t}from"./PageContainer-C6QAgCaK.js";import{pt as n}from"./main-BKzi8KGn.js";var r=e(t(),1);function i(){let{enqueueSnackbar:e}=n();return{success:(0,r.useCallback)(t=>e(t,{variant:`success`}),[e]),error:(0,r.useCallback)(t=>e(typeof t==`string`?t:t.message,{variant:`error`,persist:!0}),[e])}}export{i as t};

@@ -139,17 +139,29 @@ final class QuestionRepository extends Repository {
 	}
 
 	/**
-	 * Replace a question's options.
+	 * Replace a question's options, KEEPING THE IDS of the ones that survive.
 	 *
-	 * DELETE-THEN-INSERT, AND THAT HAS A CONSEQUENCE WORTH KNOWING: option ids change on
-	 * every save. An attempt records the ids it was shown, so editing a question invalidates
-	 * the stored responses of anybody already sitting it. That is survivable only because an
-	 * attempt freezes its question set at start and reviews fall back to the version
-	 * snapshot — see `Schema::question_versions()`.
+	 * ════════════════════════════════════════════════════════════════════════════════════
+	 * WHY IDS MUST NOT CHANGE. A candidate's answer to a choice question is stored as option
+	 * ids. This used to delete and re-insert every option on each save, so an author fixing a
+	 * typo while somebody was sitting the paper gave every option a new id: the candidate's
+	 * saved answer pointed at nothing, the runner showed the question unanswered while the
+	 * progress bar counted it answered, and it was graded wrong. Found on the upgrade test of the
+	 * 1.3.0 release (5 Nov 2026) by re-saving a question unchanged mid-paper.
 	 *
-	 * The alternative, diffing by id, would keep ids stable but has to be right about
-	 * reordering, insertion in the middle, and deletion — for a set that is almost always
-	 * fewer than six rows.
+	 * SO: an option sent back with its `id` is UPDATED IN PLACE; one without an id is
+	 * inserted; a stored option that was not sent back is deleted. The editor already sends
+	 * ids — it edits the objects it loaded, and a reorder moves the object, id and all — so a
+	 * reorder keeps each option's identity rather than reassigning ids by position.
+	 *
+	 * AN ID IS ONLY KEPT IF IT ALREADY BELONGS TO THIS QUESTION. Anything else — another
+	 * question's option (a duplicate passes its source's options, and a hand-made request can
+	 * name any id), an id since deleted, or the same id sent twice — is inserted as a new row.
+	 *
+	 * `ordering` is still written from the order given, 1-based, every time: pictures,
+	 * translations, versioning and the demo data all key on POSITION, and that does not
+	 * change.
+	 * ════════════════════════════════════════════════════════════════════════════════════
 	 *
 	 * @param int                               $question_id Question id.
 	 * @param array<int, array<string, mixed>>  $options     Options in display order.
@@ -159,26 +171,47 @@ final class QuestionRepository extends Repository {
 
 		$table = Db::table( 'question_options' );
 
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->delete prepares.
-		$wpdb->delete( $table, array( 'question_id' => $question_id ) );
+		$owned = array_flip(
+			array_map(
+				'intval',
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; this is the write path and must read the live rows.
+				(array) $wpdb->get_col( $wpdb->prepare( "SELECT id FROM %i WHERE question_id = %d", $table, $question_id ) )
+			)
+		);
+
+		$kept = array();
 
 		foreach ( array_values( $options ) as $position => $option ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->insert prepares.
-			$wpdb->insert(
-				$table,
-				array(
-					'question_id' => $question_id,
-					'ordering'    => $position + 1,
-					'option_text' => (string) ( $option['option_text'] ?? '' ),
-					'is_correct'  => empty( $option['is_correct'] ) ? 0 : 1,
-					'match_key'   => isset( $option['match_key'] ) && '' !== $option['match_key']
-						? (string) $option['match_key']
-						: null,
-					'feedback'    => isset( $option['feedback'] ) && '' !== $option['feedback']
-						? (string) $option['feedback']
-						: null,
-				)
+			$row = array(
+				'ordering'    => $position + 1,
+				'option_text' => (string) ( $option['option_text'] ?? '' ),
+				'is_correct'  => empty( $option['is_correct'] ) ? 0 : 1,
+				'match_key'   => isset( $option['match_key'] ) && '' !== $option['match_key']
+					? (string) $option['match_key']
+					: null,
+				'feedback'    => isset( $option['feedback'] ) && '' !== $option['feedback']
+					? (string) $option['feedback']
+					: null,
 			);
+
+			$id = (int) ( $option['id'] ?? 0 );
+
+			if ( $id > 0 && isset( $owned[ $id ] ) && ! isset( $kept[ $id ] ) ) {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->update prepares.
+				$wpdb->update( $table, $row, array( 'id' => $id, 'question_id' => $question_id ) );
+				$kept[ $id ] = true;
+
+				continue;
+			}
+
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->insert prepares.
+			$wpdb->insert( $table, array( 'question_id' => $question_id ) + $row );
+		}
+
+		// What the author removed. By id and question both, never by question alone.
+		foreach ( array_keys( array_diff_key( $owned, $kept ) ) as $gone ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; $wpdb->delete prepares.
+			$wpdb->delete( $table, array( 'id' => $gone, 'question_id' => $question_id ) );
 		}
 	}
 

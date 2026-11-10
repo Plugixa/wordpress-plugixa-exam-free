@@ -388,6 +388,17 @@ final class AccessGate {
 			if ( '' === trim( $name ) || ! is_email( $email ) ) {
 				return $this->needs( 'identify', __( 'Please tell us who you are before starting.', 'plugixa-exam' ) );
 			}
+
+			/*
+			 * CONSENT, WHEN THE SITE ASKS FOR IT (`privacy_guest_consent`, off by default).
+			 * Checked HERE, beside the name and address it is consent for, rather than only
+			 * by the form's `required` attribute — which a browser enforces and a request
+			 * made by hand does not. Its own reason, so the page can say what was missing
+			 * instead of "check your details" to somebody whose details were fine.
+			 */
+			if ( $this->settings->bool( 'privacy_guest_consent', false ) && empty( $input['guest_consent'] ) ) {
+				return $this->needs( 'consent', __( 'Please tick the box to agree before starting.', 'plugixa-exam' ) );
+			}
 		}
 
 		/*

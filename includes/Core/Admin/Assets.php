@@ -63,7 +63,8 @@ final class Assets {
 		'nav-menus',
 		'widgets',
 		'wp-pointer',
-		'media-views',
+		// NOT `media-views`: it styles WordPress's media window, which the editors' Add media
+		// button opens (see enqueue()). Its rules are scoped to the modal's own classes.
 	);
 
 	/**
@@ -124,8 +125,13 @@ final class Assets {
 		 * kses allow-list accepts on the way back in, which a third-party editor would have to be
 		 * taught; every gap between the two is markup silently stripped on save.
 		 *
-		 * Media buttons are off at the call site in `shared/components/RichTextField.tsx`, because
-		 * `media` and `media-views` are both in DROP_STYLES and the modal would open unstyled.
+		 * WORDPRESS'S OWN MEDIA WINDOW, TOO (5 Nov 2026, the owner's decision, matching Plugixa
+		 * FAQ): every editor shows WordPress's "Add media" button, which uploads from the
+		 * computer or picks from the Media Library. Loaded only for users WordPress lets into its
+		 * Media Library (`upload_files`) — the same rule as the post editor — and
+		 * `shared/components/RichTextField.tsx` shows the button only when `wp.media` exists, so
+		 * anybody without it simply has no button rather than one that fails. An image caption
+		 * arrives as a `[caption]` shortcode and becomes a <figure> in `Core\Content\Captions`.
 		 */
 		wp_enqueue_editor(
 			array(
@@ -133,6 +139,10 @@ final class Assets {
 				'quicktags' => true,
 			)
 		);
+
+		if ( current_user_can( 'upload_files' ) ) {
+			wp_enqueue_media();
+		}
 
 		/**
 		 * Fires on the exam screen, once the app bundle is enqueued.

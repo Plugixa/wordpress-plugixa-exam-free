@@ -159,8 +159,9 @@ final class QuestionTypes {
 	public function normalize( string $type, array $key ): array {
 		switch ( $type ) {
 			case 'mcq_single':
-				// Correctness lives on the options themselves; the key holds nothing.
-				return array();
+				// Correctness lives on the options themselves; the key holds only negative
+				// marking, where the minimum score is the penalty for a wrong pick.
+				return $this->normalize_negative_marking( $key );
 
 			case 'mcq_multiple':
 				return $this->normalize_mcq_multiple( $key );
@@ -205,16 +206,24 @@ final class QuestionTypes {
 			$policy = 'all_or_nothing';
 		}
 
+		return array( 'partial_policy' => $policy ) + $this->normalize_negative_marking( $key );
+	}
+
+	/**
+	 * Negative marking. The system this is ported from persisted these two and never read
+	 * them — the grader ignored both — so a site that switched it on got no negative marking
+	 * and no error. Implemented here (see the specification, §12.1); the grader in the
+	 * Attempts module reads them.
+	 *
+	 * @param array<string, mixed> $key Raw key.
+	 *
+	 * @return array{negative_marking: bool, min_score: float}
+	 */
+	private function normalize_negative_marking( array $key ): array {
 		return array(
-			'partial_policy' => $policy,
-			/*
-			 * Negative marking. The system this is ported from persisted these two and
-			 * never read them — the grader ignored both — so a site that switched it on got
-			 * no negative marking and no error. Implemented here (see the specification,
-			 * §12.1); the grader in the Attempts module reads them.
-			 */
 			'negative_marking' => ! empty( $key['negative_marking'] ),
-			'min_score'        => (float) ( $key['min_score'] ?? 0 ),
+			// A minimum above zero is meaningless — it would award a wrong answer points.
+			'min_score'        => min( 0.0, (float) ( $key['min_score'] ?? 0 ) ),
 		);
 	}
 

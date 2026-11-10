@@ -83,6 +83,21 @@ final class Module implements ModuleInterface {
 		 */
 		$container->get( AttemptPrivacy::class )->register_hooks();
 
+		/*
+		 * Retention: anonymise finished attempts older than the site keeps them. The hook is
+		 * only scheduled while a period is set (Ecosystem). A full batch means a backlog, so
+		 * the next batch runs in five minutes rather than tomorrow — the first run after a
+		 * site turns this on may have years of attempts to work through.
+		 */
+		add_action(
+			'plugixa_exam_privacy_retention',
+			static function () use ( $container ): void {
+				if ( $container->get( Privacy\Retention::class )->run() >= Privacy\Retention::BATCH ) {
+					wp_schedule_single_event( time() + 5 * MINUTE_IN_SECONDS, 'plugixa_exam_privacy_retention' );
+				}
+			}
+		);
+
 		// Daily sitting counts on the admin calendar. Aggregated rather than one event per
 		// attempt — see {@see AttemptCalendarSource} for why that matters on exam day.
 		$container->get( AttemptCalendarSource::class )->register_hooks();

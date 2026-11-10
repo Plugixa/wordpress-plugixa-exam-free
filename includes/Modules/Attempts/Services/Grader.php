@@ -70,7 +70,7 @@ final class Grader {
 
 		switch ( $type ) {
 			case 'mcq_single':
-				return $this->award( $this->grade_mcq_single( $options, $response ), $points );
+				return $this->award( $this->grade_mcq_single( $options, $response, $key ), $points, $key );
 
 			case 'mcq_multiple':
 				return $this->award( $this->grade_mcq_multiple( $options, $response, $key ), $points, $key );
@@ -158,7 +158,10 @@ final class Grader {
 		// The floor applies to the QUESTION, not to the paper. A per-question floor of 0 is
 		// the default, so negative marking cannot drag a total below what the other
 		// questions earned unless the author asks for it.
-		$floor = isset( $key['min_score'] ) ? (float) $key['min_score'] : 0.0;
+		// The same rule as the marking screen's lowest mark (AttemptService::lowest_mark()):
+		// the floor only drops below zero when negative marking is on, and never rises above
+		// zero — a positive "minimum" would hand points to a wrong answer.
+		$floor = empty( $key['negative_marking'] ) ? 0.0 : min( 0.0, (float) ( $key['min_score'] ?? 0 ) );
 
 		if ( $awarded < $floor ) {
 			$awarded = $floor;
@@ -177,15 +180,25 @@ final class Grader {
 	/**
 	 * One correct option.
 	 *
+	 * With negative marking on, a wrong pick is worth -1 of the points and `award()` floors
+	 * it at the question's `min_score`, so the minimum score IS the penalty: Points 2 and
+	 * Minimum score -0.33 give +2 / -0.33 / 0 (right / wrong / blank). Blank never reaches
+	 * here — `grade()` scores it zero first.
+	 *
 	 * @param array<int, array<string, mixed>> $options  Canonical options.
 	 * @param mixed                            $response Selected option id.
+	 * @param array<string, mixed>             $key      Answer key.
 	 */
-	private function grade_mcq_single( array $options, mixed $response ): float {
+	private function grade_mcq_single( array $options, mixed $response, array $key = array() ): float {
 		$selected = $this->single_id( $response );
 
 		foreach ( $options as $option ) {
 			if ( (int) $option['id'] === $selected ) {
-				return ! empty( $option['is_correct'] ) ? 1.0 : 0.0;
+				if ( ! empty( $option['is_correct'] ) ) {
+					return 1.0;
+				}
+
+				return empty( $key['negative_marking'] ) ? 0.0 : -1.0;
 			}
 		}
 

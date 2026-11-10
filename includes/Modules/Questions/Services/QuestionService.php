@@ -349,6 +349,10 @@ final class QuestionService {
 			}
 
 			$clean[] = array(
+				// Carried so the repository can update the option in place and keep its id —
+				// see QuestionRepository::replace_options(). It decides whether the id is
+				// really this question's; here it is only a number.
+				'id'          => absint( $option['id'] ?? 0 ),
 				'option_text' => $text,
 				'is_correct'  => ! empty( $option['is_correct'] ),
 				'match_key'   => sanitize_text_field( (string) ( $option['match_key'] ?? '' ) ),

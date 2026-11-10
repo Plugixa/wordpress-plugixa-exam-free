@@ -180,6 +180,8 @@ final class FormHandler {
 			'access_code' => isset( $_POST['access_code'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['access_code'] ) ) : '',
 			'guest_name'  => isset( $_POST['guest_name'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['guest_name'] ) ) : '',
 			'guest_email' => isset( $_POST['guest_email'] ) ? sanitize_email( wp_unslash( (string) $_POST['guest_email'] ) ) : '',
+			// Only ever '1' or '' — a box is ticked or it is not, whatever was posted.
+			'guest_consent' => empty( $_POST['guest_consent'] ) ? '' : '1',
 		);
 
 		/**

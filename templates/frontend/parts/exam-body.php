@@ -64,6 +64,8 @@ if ( '' !== $pxe_error ) :
 		 */
 		if ( \PlugixaExam\Core\Frontend\FormHandler::EXPIRED === $pxe_error ) {
 			$pxe_error_message = __( 'This page had been open for a while, so nothing was started. Please press the button again.', 'plugixa-exam' );
+		} elseif ( 'plugixa_exam_needs_consent' === $pxe_error ) {
+			$pxe_error_message = __( 'Please tick the box to agree before starting.', 'plugixa-exam' );
 		} elseif ( 'plugixa_exam_bad_code' === $pxe_error ) {
 			$pxe_error_message = __( 'That did not work. Please check your details and try again.', 'plugixa-exam' );
 		} else {
@@ -200,6 +202,28 @@ if ( '' !== $pxe_error ) :
 			<input class="pxe-field__input" type="email" name="guest_email" autocomplete="email" required>
 			<span class="pxe-field__help"><?php esc_html_e( 'We use this to send you your result.', 'plugixa-exam' ); ?></span>
 		</label>
+
+		<?php
+		/*
+		 * PRIVACY, EACH PART ONLY WHEN THE SITE SWITCHED IT ON (both off by default, so an
+		 * update does not change this form). The link appears only if the site has a privacy
+		 * policy page — a link to nowhere is worse than no link.
+		 */
+		$pxe_privacy = \PlugixaExam\Core\Plugin::instance()->container()->get( \PlugixaExam\Core\Settings::class );
+		$pxe_policy  = $pxe_privacy->bool( 'privacy_guest_policy_link', false ) ? get_privacy_policy_url() : '';
+		?>
+		<?php if ( '' !== $pxe_policy ) : ?>
+			<p class="pxe-field__help pxe-gate__privacy">
+				<a href="<?php echo esc_url( $pxe_policy ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'How we use your details', 'plugixa-exam' ); ?></a>
+			</p>
+		<?php endif; ?>
+
+		<?php if ( $pxe_privacy->bool( 'privacy_guest_consent', false ) ) : ?>
+			<label class="pxe-field pxe-field--check">
+				<input type="checkbox" name="guest_consent" value="1" required>
+				<span class="pxe-field__label"><?php esc_html_e( 'I agree to my name, email address and answers being kept to run and mark this exam.', 'plugixa-exam' ); ?></span>
+			</label>
+		<?php endif; ?>
 
 		<button type="submit" class="pxe-button pxe-button--primary"><?php esc_html_e( 'Continue', 'plugixa-exam' ); ?></button>
 	</form>

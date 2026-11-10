@@ -4,7 +4,7 @@
  * Plugin Name: Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates
  * Plugin URI: https://www.plugixa.com/plugins/plugixa-exam
  * Description: Exams, quizzes and assessments for WordPress — a question bank, an exam builder with sections and random pools, a timed runner with autosave, and automatic grading.
- * Version: 1.2.1
+ * Version: 1.3.0
  * Author: Plugixa
  * Author URI: https://plugixa.com
  * License: GPL-2.0+
@@ -95,7 +95,7 @@ if ( defined( 'PLUGIXA_EXAM_VERSION' ) ) {
     } );
     return;
 }
-define( 'PLUGIXA_EXAM_VERSION', '1.2.1' );
+define( 'PLUGIXA_EXAM_VERSION', '1.3.0' );
 define( 'PLUGIXA_EXAM_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIXA_EXAM_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIXA_EXAM_BASENAME', plugin_basename( __FILE__ ) );

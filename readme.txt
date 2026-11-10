@@ -4,7 +4,7 @@ Tags: exam, quiz, assessment, elearning, education
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Records live in the plugin's **own database tables**, not in posts and post meta
 
 * Fast, Material UI-based admin application
 * Five seeded roles, a schedule calendar and a dashboard
-* GDPR export and erasure through WordPress's own privacy tools
+* GDPR export and erasure through WordPress's own privacy tools, with optional retention periods and guest consent
 * Translation-ready, with right-to-left support
 * No CDN - fonts are served from your own site
 
@@ -351,6 +351,20 @@ plugin ships no default platform and contacts nothing until you register one.
 
 == Changelog ==
 
+= 1.3.0 =
+* New: Tools → Erase Personal Data now reaches every exam record that names a person. Certificates are withdrawn (the public page says "withdrawn" and shows no name), uploaded files are deleted from disk, and passage notes, learning-platform (LTI) logins, alerts, group memberships, leaderboard names, webhook payloads, staff roles, API tokens and invigilation access are removed.
+* New: Tools → Export Personal Data includes all of the above, plus grader comments, the integrity record and the names of files handed in.
+* New: Settings → Privacy, all off by default: erase exam data when a user account is deleted, anonymise finished attempts after a number of months, delete failed emails and webhooks after a number of days, and a privacy link or consent box on the guest form.
+* New: suggested text for your privacy policy, under Settings → Privacy → Policy Guide.
+* New: single-answer multiple-choice questions can use negative marking. A wrong answer scores the question's minimum score (for example -0.33), the right answer full points, and a blank answer 0.
+* New: every text editor has WordPress's Add media button. Upload a picture from your computer or pick one from the Media Library, and it goes in where the cursor is. A caption shows under the picture, and left, right and centre alignment are kept on the exam page.
+* Changed: the plugin's own Insert image button under the question text is replaced by Add media. Pictures already in your questions are not changed.
+* Fixed: a minimum score above zero could award points for a wrong answer. It now counts as 0.
+* Fixed: editing a question while a candidate was sitting it lost their answer to that question, which then showed as unanswered and was marked wrong. Saving a question now keeps its answer options' identity.
+* Fixed: switching an app off in the App Manager also switched off the export and erasure of the data it had stored.
+* Fixed: a certificate withdrawn because its purchase was refunded came back the next time the attempt was re-marked.
+* Fixed: uninstalling left candidates' uploaded files on disk.
+
 = 1.2.1 =
 * Fixed: saving a paper on the marking screen reset negative marks to 0 and raised the score. They now stay as they are, and a marker can change one down to the question's minimum score.
 
@@ -433,6 +447,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.3.0 =
+Erasing a person now also withdraws their certificates and deletes their uploads. New options under Settings → Privacy are off until you turn them on. Adds negative marking for single-answer questions and Add media in every editor.
 
 = 1.2.1 =
 Fixes negative marks being reset to 0 when a paper is saved on the marking screen. Marks already reset are not restored.

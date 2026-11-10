@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates 1.2.1\n"
+"Project-Id-Version: Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugixa-exam\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-02T18:09:35+00:00\n"
+"POT-Creation-Date: 2026-11-05T13:16:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: plugixa-exam\n"
@@ -59,7 +59,7 @@ msgstr ""
 #: includes/Core/Frontend/Pages.php:129
 #: includes/Modules/Dashboard/Module.php:87
 #: includes/Modules/Exams/Strings.php:24
-#: includes/Modules/Roles/Module.php:115
+#: includes/Modules/Roles/Module.php:120
 #: includes/Modules/Settings/Module.php:221
 #: templates/frontend/catalogue.php:38
 msgid "Exams"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: includes/Core/Admin/MigrationNotice.php:80
 #: includes/Core/App/Strings.php:81
-#: includes/Modules/Notifications/Module.php:206
+#: includes/Modules/Notifications/Module.php:218
 msgid "Try again"
 msgstr ""
 
@@ -262,8 +262,8 @@ msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:237
 #: includes/Core/Frontend/ResultState.php:239
-#: includes/Modules/Attempts/Module.php:159
-#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:230
+#: includes/Modules/Attempts/Module.php:174
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:268
 #: includes/Modules/Questions/Strings.php:75
 #: templates/frontend/take.php:330
 msgid "True"
@@ -271,8 +271,8 @@ msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:238
 #: includes/Core/Frontend/ResultState.php:240
-#: includes/Modules/Attempts/Module.php:158
-#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:230
+#: includes/Modules/Attempts/Module.php:173
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:268
 #: includes/Modules/Questions/Strings.php:76
 #: templates/frontend/take.php:334
 msgid "False"
@@ -367,7 +367,7 @@ msgid "Results are not out yet."
 msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:262
-#: includes/Modules/Attempts/Module.php:203
+#: includes/Modules/Attempts/Module.php:218
 #: includes/Modules/Settings/Module.php:93
 #: templates/frontend/parts/my-certificates.php:85
 #: templates/frontend/parts/my-results.php:99
@@ -376,8 +376,8 @@ msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:263
 #: includes/Core/Frontend/ResultState.php:307
-#: includes/Modules/Attempts/Module.php:148
-#: includes/Modules/Attempts/Module.php:188
+#: includes/Modules/Attempts/Module.php:163
+#: includes/Modules/Attempts/Module.php:203
 #: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:164
 #: includes/Modules/Notifications/Http/NotificationsController.php:329
 #: includes/Modules/Notifications/Services/Tokens.php:288
@@ -388,8 +388,8 @@ msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:264
 #: includes/Core/Frontend/ResultState.php:307
-#: includes/Modules/Attempts/Module.php:149
-#: includes/Modules/Attempts/Module.php:183
+#: includes/Modules/Attempts/Module.php:164
+#: includes/Modules/Attempts/Module.php:198
 #: includes/Modules/Notifications/Services/Tokens.php:289
 #: templates/frontend/parts/my-results.php:94
 #: templates/frontend/parts/outcome-badge.php:64
@@ -562,7 +562,7 @@ msgid "Create"
 msgstr ""
 
 #: includes/Core/App/Strings.php:79
-#: includes/Modules/Questions/Strings.php:115
+#: includes/Modules/Questions/Strings.php:117
 msgid "Duplicate"
 msgstr ""
 
@@ -596,7 +596,8 @@ msgstr ""
 
 #: includes/Core/App/Strings.php:95
 #: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:147
-#: includes/Modules/Certificates/Module.php:269
+#: includes/Modules/Certificates/Module.php:282
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:101
 #: includes/Modules/Notifications/Privacy/NotificationPrivacy.php:95
 msgid "Status"
 msgstr ""
@@ -679,7 +680,7 @@ msgid "Certificate %s has been issued to you."
 msgstr ""
 
 #: includes/Core/Frontend/ResultState.php:197
-#: includes/Modules/Attempts/Module.php:151
+#: includes/Modules/Attempts/Module.php:166
 msgid "Awaiting marking"
 msgstr ""
 
@@ -700,7 +701,7 @@ msgstr ""
 
 #. translators: %d: question number.
 #: includes/Core/Frontend/ResultState.php:249
-#: includes/Modules/Attempts/Module.php:196
+#: includes/Modules/Attempts/Module.php:211
 #: templates/frontend/take.php:245
 #, php-format
 msgid "Question %d"
@@ -733,12 +734,12 @@ msgid "Your certificate"
 msgstr ""
 
 #: includes/Core/Frontend/ResultState.php:333
-#: includes/Modules/Certificates/Module.php:277
+#: includes/Modules/Certificates/Module.php:290
 msgid "Download PDF"
 msgstr ""
 
 #: includes/Core/Frontend/ResultState.php:334
-#: includes/Modules/Certificates/Module.php:278
+#: includes/Modules/Certificates/Module.php:291
 msgid "Verification link"
 msgstr ""
 
@@ -770,7 +771,7 @@ msgid "Not found."
 msgstr ""
 
 #: includes/Modules/Alerts/Frontend/Shortcode.php:67
-#: includes/Modules/Alerts/Module.php:211
+#: includes/Modules/Alerts/Module.php:225
 msgid "Nothing to catch up on."
 msgstr ""
 
@@ -786,23 +787,23 @@ msgstr ""
 msgid "A paper needs marking — %s"
 msgstr ""
 
-#: includes/Modules/Alerts/Module.php:209
+#: includes/Modules/Alerts/Module.php:223
 msgid "Notifications"
 msgstr ""
 
-#: includes/Modules/Alerts/Module.php:210
+#: includes/Modules/Alerts/Module.php:224
 msgid "A notice inbox for each person: results ready, papers to mark."
 msgstr ""
 
-#: includes/Modules/Alerts/Module.php:212
+#: includes/Modules/Alerts/Module.php:226
 msgid "Mark all read"
 msgstr ""
 
-#: includes/Modules/Alerts/Module.php:213
+#: includes/Modules/Alerts/Module.php:227
 msgid "A paper needs marking — {name}"
 msgstr ""
 
-#: includes/Modules/Alerts/Module.php:214
+#: includes/Modules/Alerts/Module.php:228
 msgid "Your result is ready — {name}"
 msgstr ""
 
@@ -820,217 +821,218 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: includes/Modules/Attempts/Http/AttemptsController.php:313
-#: includes/Modules/Attempts/Module.php:144
+#: includes/Modules/Attempts/Module.php:159
 #: includes/Modules/Attempts/Services/AttemptService.php:1688
 #: includes/Modules/Notifications/Services/AttemptNotifier.php:236
 msgid "Guest"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:138
+#: includes/Modules/Attempts/Module.php:153
 #: includes/Modules/Dashboard/Module.php:90
-#: includes/Modules/Roles/Module.php:117
+#: includes/Modules/Roles/Module.php:122
 #: includes/Modules/Settings/Module.php:220
 msgid "Attempts"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:139
+#: includes/Modules/Attempts/Module.php:154
 msgid "Every paper sat: the answers, the scores, and the work waiting to be marked."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:140
+#: includes/Modules/Attempts/Module.php:155
 msgid "Attempt"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:141
+#: includes/Modules/Attempts/Module.php:156
 msgid "Nobody has sat an exam yet."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:142
+#: includes/Modules/Attempts/Module.php:157
 msgid "Every sitting of every exam, with what it scored and what still needs marking."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:143
-#: includes/Modules/Certificates/Services/Issuer.php:372
+#: includes/Modules/Attempts/Module.php:158
+#: includes/Modules/Certificates/Services/Issuer.php:391
 msgid "Examinee"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:145
+#: includes/Modules/Attempts/Module.php:160
 #: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:151
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:97
 msgid "Score"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:146
+#: includes/Modules/Attempts/Module.php:161
 msgid "Percent"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:147
+#: includes/Modules/Attempts/Module.php:162
 msgid "Outcome"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:150
+#: includes/Modules/Attempts/Module.php:165
 #: templates/frontend/parts/outcome-badge.php:71
 msgid "In progress"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:152
+#: includes/Modules/Attempts/Module.php:167
 msgid "Graded"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:153
+#: includes/Modules/Attempts/Module.php:168
 msgid "Locked for review"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:154
+#: includes/Modules/Attempts/Module.php:169
 msgid "Abandoned"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:155
-#: includes/Modules/Attempts/Module.php:181
+#: includes/Modules/Attempts/Module.php:170
+#: includes/Modules/Attempts/Module.php:196
 msgid "Needs marking"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:156
+#: includes/Modules/Attempts/Module.php:171
 #: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:143
 msgid "Submitted"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:157
+#: includes/Modules/Attempts/Module.php:172
 msgid "Time taken"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:160
+#: includes/Modules/Attempts/Module.php:175
 msgid "All exams"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:161
+#: includes/Modules/Attempts/Module.php:176
 msgid "Any status"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:162
+#: includes/Modules/Attempts/Module.php:177
 msgid "This attempt could not be found."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:163
+#: includes/Modules/Attempts/Module.php:178
 msgid "Marked automatically"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:164
+#: includes/Modules/Attempts/Module.php:179
 msgid "By hand"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:165
+#: includes/Modules/Attempts/Module.php:180
 msgid "chose"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:166
+#: includes/Modules/Attempts/Module.php:181
 msgid "Delete this attempt?"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:167
+#: includes/Modules/Attempts/Module.php:182
 msgid "The paper and every answer on it are removed for good. This cannot be undone."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:168
+#: includes/Modules/Attempts/Module.php:183
 msgid "correct"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:169
+#: includes/Modules/Attempts/Module.php:184
 msgid "Feedback on the whole paper"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:170
+#: includes/Modules/Attempts/Module.php:185
 msgid "Shown to the examinee with their result."
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:171
+#: includes/Modules/Attempts/Module.php:186
 msgid "Not released yet"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Attempts/Module.php:173
+#: includes/Modules/Attempts/Module.php:188
 #, php-format
 msgid "%d h"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:174
+#: includes/Modules/Attempts/Module.php:189
 msgid "Mark"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:175
+#: includes/Modules/Attempts/Module.php:190
 msgid "Mark paper"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:176
+#: includes/Modules/Attempts/Module.php:191
 msgid "Marking saved"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Attempts/Module.php:178
+#: includes/Modules/Attempts/Module.php:193
 #, php-format
 msgid "%d min"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Attempts/Module.php:180
+#: includes/Modules/Attempts/Module.php:195
 #, php-format
 msgid "%d still unmarked"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:182
+#: includes/Modules/Attempts/Module.php:197
 msgid "— no answer given —"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Attempts/Module.php:185
+#: includes/Modules/Attempts/Module.php:200
 #, php-format
 msgid "out of %s"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Attempts/Module.php:187
+#: includes/Modules/Attempts/Module.php:202
 #, php-format
 msgid "Pass mark %s%"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:189
+#: includes/Modules/Attempts/Module.php:204
 #: includes/Modules/Exams/Strings.php:175
 #: includes/Modules/Questions/Strings.php:46
 msgid "Points"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:190
+#: includes/Modules/Attempts/Module.php:205
 msgid "Provisional"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:191
+#: includes/Modules/Attempts/Module.php:206
 msgid "Note on this answer"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:197
+#: includes/Modules/Attempts/Module.php:212
 msgid "Running total"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:200
+#: includes/Modules/Attempts/Module.php:215
 msgid "Name or email…"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:201
+#: includes/Modules/Attempts/Module.php:216
 msgid "Paused"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:202
+#: includes/Modules/Attempts/Module.php:217
 msgid "Their answer"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:204
+#: includes/Modules/Attempts/Module.php:219
 msgid "Visible to the examinee"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:205
+#: includes/Modules/Attempts/Module.php:220
 msgid "Would not pass"
 msgstr ""
 
-#: includes/Modules/Attempts/Module.php:206
+#: includes/Modules/Attempts/Module.php:221
 msgid "Would pass"
 msgstr ""
 
@@ -1083,8 +1085,18 @@ msgstr ""
 msgid "Answer %d"
 msgstr ""
 
+#. translators: %d: position of the answer within the attempt.
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:216
+#, php-format
+msgid "Grader comment on answer %d"
+msgstr ""
+
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:233
+msgid "Integrity record (IP address, browser, focus changes)"
+msgstr ""
+
 #. translators: %d: number of exam attempts.
-#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:318
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:349
 #, php-format
 msgid "%d exam attempt was anonymised. The name, email address, written answers and any grader or invigilator notes were deleted; the score was kept, with nothing left that identifies who achieved it, so the exam statistics remain correct."
 msgid_plural "%d exam attempts were anonymised. The names, email addresses, written answers and any grader or invigilator notes were deleted; the scores were kept, with nothing left that identifies who achieved them, so the exam statistics remain correct."
@@ -1092,7 +1104,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: exam id.
-#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:427
+#: includes/Modules/Attempts/Privacy/AttemptPrivacy.php:502
 #, php-format
 msgid "Exam #%d (since deleted)"
 msgstr ""
@@ -1127,7 +1139,7 @@ msgid "This exam needs an access code."
 msgstr ""
 
 #: includes/Modules/Attempts/Services/AccessGate.php:344
-#: templates/frontend/parts/exam-body.php:68
+#: templates/frontend/parts/exam-body.php:70
 msgid "That did not work. Please check your details and try again."
 msgstr ""
 
@@ -1135,16 +1147,21 @@ msgstr ""
 msgid "Please tell us who you are before starting."
 msgstr ""
 
-#: includes/Modules/Attempts/Services/AccessGate.php:425
+#: includes/Modules/Attempts/Services/AccessGate.php:400
+#: templates/frontend/parts/exam-body.php:68
+msgid "Please tick the box to agree before starting."
+msgstr ""
+
+#: includes/Modules/Attempts/Services/AccessGate.php:436
 msgid "Your previous attempt is awaiting review. You cannot start a new attempt right now."
 msgstr ""
 
-#: includes/Modules/Attempts/Services/AccessGate.php:440
+#: includes/Modules/Attempts/Services/AccessGate.php:451
 msgid "You have reached the maximum number of attempts for this exam."
 msgstr ""
 
 #. translators: %d: number of minutes.
-#: includes/Modules/Attempts/Services/AccessGate.php:460
+#: includes/Modules/Attempts/Services/AccessGate.php:471
 #, php-format
 msgid "You can retake this exam in %d minute."
 msgid_plural "You can retake this exam in %d minutes."
@@ -1313,164 +1330,197 @@ msgid_plural "This site keeps up to %d certificate designs. Edit one you have, o
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Modules/Certificates/Module.php:247
-#: includes/Modules/Certificates/Module.php:261
-#: includes/Modules/Roles/Module.php:121
-msgid "Certificates"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:248
-msgid "Award a certificate on a pass, with a link anyone can use to check it."
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:259
-msgid "Letter"
+#: includes/Modules/Certificates/Module.php:96
+msgid "If you pass an exam that awards a certificate, we keep the certificate with your name on it. Anyone you give its link or number to can check it on a public page that shows your name, the exam and the date."
 msgstr ""
 
 #: includes/Modules/Certificates/Module.php:260
-msgid "What this site has awarded, and the designs it awards them on."
+#: includes/Modules/Certificates/Module.php:274
+#: includes/Modules/Roles/Module.php:126
+msgid "Certificates"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:262
-msgid "issued and verifiable"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:263
-msgid "Designs"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:264
-msgid "Number"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:265
-#: templates/frontend/verify.php:89
-msgid "Awarded to"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:266
-#: templates/frontend/verify.php:107
-msgid "Issued"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:267
-#: templates/frontend/verify.php:114
-msgid "Valid until"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:268
-msgid "Never expires"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:270
-msgid "Valid"
-msgstr ""
-
-#: includes/Modules/Certificates/Module.php:271
-msgid "Withdrawn"
+#: includes/Modules/Certificates/Module.php:261
+msgid "Award a certificate on a pass, with a link anyone can use to check it."
 msgstr ""
 
 #: includes/Modules/Certificates/Module.php:272
+msgid "Letter"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:273
+msgid "What this site has awarded, and the designs it awards them on."
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:275
+msgid "issued and verifiable"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:276
+msgid "Designs"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:277
+msgid "Number"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:278
+#: templates/frontend/verify.php:91
+msgid "Awarded to"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:279
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:89
+#: templates/frontend/verify.php:110
+msgid "Issued"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:280
+#: templates/frontend/verify.php:117
+msgid "Valid until"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:281
+msgid "Never expires"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:283
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:102
+msgid "Valid"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:284
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:102
+msgid "Withdrawn"
+msgstr ""
+
+#: includes/Modules/Certificates/Module.php:285
 #: templates/frontend/parts/my-certificates.php:81
 msgid "Expired"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:273
+#: includes/Modules/Certificates/Module.php:286
 msgid "Withdraw"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:274
+#: includes/Modules/Certificates/Module.php:287
 msgid "The certificate stays on record and its number stays reserved, but it stops verifying. Say why, so anyone checking later knows."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:275
+#: includes/Modules/Certificates/Module.php:288
 msgid "Reinstate"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:276
+#: includes/Modules/Certificates/Module.php:289
 msgid "Reason"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:279
+#: includes/Modules/Certificates/Module.php:292
 msgid "Nothing has been awarded yet."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:280
+#: includes/Modules/Certificates/Module.php:293
 msgid "There are no certificate designs yet, so nothing can be awarded."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:281
+#: includes/Modules/Certificates/Module.php:294
 msgid "Paper"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:282
+#: includes/Modules/Certificates/Module.php:295
 msgid "Orientation"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:283
+#: includes/Modules/Certificates/Module.php:296
 msgid "Valid for (days)"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:284
+#: includes/Modules/Certificates/Module.php:297
 msgid "Zero means it never expires."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:285
+#: includes/Modules/Certificates/Module.php:298
 msgid "Number format"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:286
+#: includes/Modules/Certificates/Module.php:299
 msgid "Tokens: {Y} {y} {m} {d} {seq} {seq:5} {rand} {exam}."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:287
+#: includes/Modules/Certificates/Module.php:300
 msgid "Add a design"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:288
+#: includes/Modules/Certificates/Module.php:301
 msgid "Delete this design?"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:289
+#: includes/Modules/Certificates/Module.php:302
 msgid "Certificates already awarded on it are unaffected — each one carries its own frozen copy."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:290
+#: includes/Modules/Certificates/Module.php:303
 msgid "A certificate is issued automatically when somebody passes an exam and its marking is finished."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:291
+#: includes/Modules/Certificates/Module.php:304
 msgid "Layout (JSON, millimetres)"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:292
+#: includes/Modules/Certificates/Module.php:305
 msgid "Import or export the layout as JSON"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:293
+#: includes/Modules/Certificates/Module.php:306
 msgid "Hide the layout JSON"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:295
+#: includes/Modules/Certificates/Module.php:308
 msgid "Fields are positioned in millimetres from the top-left of the page. Open the layout below to move one, or to bring in a layout from somewhere else."
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:296
+#: includes/Modules/Certificates/Module.php:309
 msgid "days"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:297
+#: includes/Modules/Certificates/Module.php:310
 msgid "Landscape"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:298
+#: includes/Modules/Certificates/Module.php:311
 msgid "Portrait"
 msgstr ""
 
-#: includes/Modules/Certificates/Module.php:299
-#: includes/Modules/Roles/Module.php:99
+#: includes/Modules/Certificates/Module.php:312
+#: includes/Modules/Roles/Module.php:104
 #: includes/Modules/Tags/Module.php:148
 msgid "Name"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:56
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:77
+msgid "Exam certificates"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:81
+#: templates/frontend/verify.php:104
+msgid "Certificate number"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:85
+msgid "Name on the certificate"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:93
+msgid "Expires"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:105
+msgid "Public verification page"
+msgstr ""
+
+#: includes/Modules/Certificates/Privacy/CertificatePrivacy.php:203
+msgid "Withdrawn: the holder asked for their personal data to be erased."
 msgstr ""
 
 #: includes/Modules/Certificates/Services/DefaultDesign.php:54
@@ -1683,32 +1733,116 @@ msgstr ""
 msgid "The application loaded but its settings did not. This usually means a caching or script-optimisation plugin removed the inline configuration script. Try clearing that plugin’s cache, or excluding this admin page from optimisation."
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:170
+#: includes/Modules/Ecosystem/Module.php:162
+msgid "We use Plugixa Exam to run online exams. For each exam you take, we keep when you started and handed it in, your answers, your score and result, and any comments a marker writes about your answers."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:163
+msgid "If you take an exam without an account, we also keep the name and email address you give us. We set one cookie, plugixa_exam_guest, so that your paper survives a page reload; it holds a random code and nothing about you, and lasts two days. It is set only when you press Start, never for looking at an exam."
+msgstr ""
+
+#. translators: %d: number of months.
+#: includes/Modules/Ecosystem/Module.php:178
+#, php-format
+msgid "Your name, email address, answers and comments are removed from a finished exam %d month after you hand it in. Your score is kept without anything that identifies you."
+msgid_plural "Your name, email address, answers and comments are removed from a finished exam %d months after you hand it in. Your score is kept without anything that identifies you."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Modules/Ecosystem/Module.php:186
+msgid "We keep your exam records until you ask us to remove them."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:188
+msgid "You can ask us for a copy of the exam data we hold about you, or ask us to erase it. When we erase it, your answers, name and email address are removed; your score may be kept without anything that identifies you, so that the results of other candidates stay correct, and any certificate you were issued is withdrawn."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:304
 msgid "Site integration"
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:171
+#: includes/Modules/Ecosystem/Module.php:305
 msgid "Where exams meet WordPress: the privacy tools, site search and the block editor."
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:172
+#: includes/Modules/Ecosystem/Module.php:306
 msgid "Let exams be found by site search"
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:173
+#: includes/Modules/Ecosystem/Module.php:307
 msgid "Exams appear in search results and in the link picker when you are writing a post."
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:174
+#: includes/Modules/Ecosystem/Module.php:308
 msgid "Include exams that have not opened yet"
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:175
+#: includes/Modules/Ecosystem/Module.php:309
 msgid "Privacy tools"
 msgstr ""
 
-#: includes/Modules/Ecosystem/Module.php:176
+#: includes/Modules/Ecosystem/Module.php:310
 msgid "Exam data is included in the personal-data export and erasure that WordPress runs from Tools → Export Personal Data. This is always on."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:311
+msgid "Privacy"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:312
+msgid "always on — there is nothing to switch on for a personal-data request to include exam data."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:313
+msgid "When a user account is deleted, erase its exam data too"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:314
+msgid "Guests"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:315
+msgid "Link to the privacy policy under the guest form"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:316
+msgid "Guests are asked for a name and an email address before an exam. This links the page set in Settings → Privacy beside those fields."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:317
+msgid "Ask guests to agree before they start"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:318
+msgid "Adds a box a guest must tick. Only for sites whose legal basis is consent; most exam providers rely on running the exam the candidate asked to sit, and need no box."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:319
+msgid "Retention"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:320
+msgid "Anonymise finished attempts after (months)"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:321
+msgid "Names, email addresses, answers and comments are removed; scores stay, so your statistics are unchanged. Certificates are kept, so they still verify. 0 means never."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:322
+msgid "Delete failed emails and webhook deliveries after (days)"
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:323
+msgid "Sent ones are already removed after 30 days. Failed ones are kept until this many days have passed, so you can still look into them. 0 means never."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:324
+msgid "The first run happens within an hour of saving and cannot be undone."
+msgstr ""
+
+#: includes/Modules/Ecosystem/Module.php:325
+msgid "Runs the same erasure as Tools → Erase Personal Data: attempts are anonymised and certificates withdrawn. Skipped when you attribute the content of the account to another user. Off by default, because deleting an account used to leave its results in your reports."
 msgstr ""
 
 #. translators: %s: exam title.
@@ -1762,7 +1896,7 @@ msgstr ""
 
 #: includes/Modules/Exams/Strings.php:34
 #: includes/Modules/Exams/Strings.php:187
-#: includes/Modules/Roles/Module.php:114
+#: includes/Modules/Roles/Module.php:119
 msgid "Questions"
 msgstr ""
 
@@ -1786,8 +1920,8 @@ msgstr ""
 
 #: includes/Modules/Exams/Strings.php:41
 #: includes/Modules/Exams/Strings.php:183
-#: includes/Modules/Questions/Strings.php:107
-#: includes/Modules/Roles/Module.php:100
+#: includes/Modules/Questions/Strings.php:109
+#: includes/Modules/Roles/Module.php:105
 #: includes/Modules/Subjects/Strings.php:34
 msgid "Description"
 msgstr ""
@@ -1801,7 +1935,7 @@ msgid "Shown on the landing page before the examinee starts."
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:44
-#: includes/Modules/Notifications/Module.php:190
+#: includes/Modules/Notifications/Module.php:202
 #: includes/Modules/Notifications/Privacy/NotificationPrivacy.php:87
 #: includes/Modules/Questions/Strings.php:44
 #: includes/Modules/Subjects/Strings.php:26
@@ -1893,7 +2027,7 @@ msgstr ""
 
 #: includes/Modules/Exams/Strings.php:68
 #: includes/Modules/Exams/Strings.php:147
-#: templates/frontend/parts/exam-body.php:87
+#: templates/frontend/parts/exam-body.php:89
 msgid "Time limit"
 msgstr ""
 
@@ -1903,7 +2037,7 @@ msgstr ""
 
 #: includes/Modules/Exams/Strings.php:70
 #: includes/Modules/Exams/Strings.php:138
-#: templates/frontend/parts/exam-body.php:107
+#: templates/frontend/parts/exam-body.php:109
 msgid "Attempts allowed"
 msgstr ""
 
@@ -1991,7 +2125,7 @@ msgid "Only people I list"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:95
-#: templates/frontend/parts/exam-body.php:176
+#: templates/frontend/parts/exam-body.php:178
 msgid "Access code"
 msgstr ""
 
@@ -2001,7 +2135,7 @@ msgstr ""
 
 #: includes/Modules/Exams/Strings.php:99
 #: includes/Modules/Exams/Strings.php:143
-#: templates/frontend/parts/exam-body.php:101
+#: templates/frontend/parts/exam-body.php:103
 msgid "Pass mark"
 msgstr ""
 
@@ -2170,7 +2304,7 @@ msgid "Availability window"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:149
-#: includes/Modules/Notifications/Module.php:220
+#: includes/Modules/Notifications/Module.php:232
 msgid "Off"
 msgstr ""
 
@@ -2458,7 +2592,7 @@ msgid "Showing the first %d."
 msgstr ""
 
 #: includes/Modules/ImportExport/Module.php:106
-#: includes/Modules/Notifications/Module.php:211
+#: includes/Modules/Notifications/Module.php:223
 msgid "Format"
 msgstr ""
 
@@ -2775,130 +2909,130 @@ msgstr ""
 msgid "Sample Exam"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:152
+#: includes/Modules/Notifications/Module.php:164
 msgid "Every five minutes (Plugixa Exam)"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:185
+#: includes/Modules/Notifications/Module.php:197
 msgid "Email"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:186
+#: includes/Modules/Notifications/Module.php:198
 msgid "Email templates, and the queue that sends them."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:187
+#: includes/Modules/Notifications/Module.php:199
 msgid "The messages this site sends, and anything waiting to go out."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:188
+#: includes/Modules/Notifications/Module.php:200
 msgid "Templates"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:189
+#: includes/Modules/Notifications/Module.php:201
 msgid "Outbox"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:191
+#: includes/Modules/Notifications/Module.php:203
 #: includes/Modules/Notifications/Privacy/NotificationPrivacy.php:99
 msgid "Message"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:192
+#: includes/Modules/Notifications/Module.php:204
 msgid "From name"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:193
+#: includes/Modules/Notifications/Module.php:205
 msgid "From address"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:194
+#: includes/Modules/Notifications/Module.php:206
 msgid "Leave empty to send as the site."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:195
+#: includes/Modules/Notifications/Module.php:207
 msgid "Send this message"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:196
+#: includes/Modules/Notifications/Module.php:208
 #: includes/Modules/Notifications/Privacy/NotificationPrivacy.php:83
 msgid "Sent to"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:197
+#: includes/Modules/Notifications/Module.php:209
 msgid "The examinee"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:198
+#: includes/Modules/Notifications/Module.php:210
 msgid "Staff"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:199
+#: includes/Modules/Notifications/Module.php:211
 msgid "Send a test"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:200
+#: includes/Modules/Notifications/Module.php:212
 msgid "Test message queued"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:201
+#: includes/Modules/Notifications/Module.php:213
 msgid "Available tokens"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:202
+#: includes/Modules/Notifications/Module.php:214
 msgid "Score tokens are left blank until the exam releases its results, so a message sent before then cannot give the mark away."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:203
+#: includes/Modules/Notifications/Module.php:215
 msgid "Waiting"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:204
+#: includes/Modules/Notifications/Module.php:216
 #: includes/Modules/Notifications/Privacy/NotificationPrivacy.php:91
 msgid "Sent"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:205
+#: includes/Modules/Notifications/Module.php:217
 msgid "Failed"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:207
+#: includes/Modules/Notifications/Module.php:219
 msgid "Nothing is waiting to be sent."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:208
+#: includes/Modules/Notifications/Module.php:220
 msgid "Last error"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:209
+#: includes/Modules/Notifications/Module.php:221
 msgid "Send now"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:210
+#: includes/Modules/Notifications/Module.php:222
 msgid "Email is switched off, so nothing is being queued or sent."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:212
+#: includes/Modules/Notifications/Module.php:224
 msgid "HTML lets you use headings, links and tables. Plain text arrives the same everywhere."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:213
+#: includes/Modules/Notifications/Module.php:225
 msgid "HTML"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:214
+#: includes/Modules/Notifications/Module.php:226
 msgid "Plain text"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:218
+#: includes/Modules/Notifications/Module.php:230
 msgid "Sent {sent}, {failed} failed"
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:219
+#: includes/Modules/Notifications/Module.php:231
 msgid "No templates yet."
 msgstr ""
 
-#: includes/Modules/Notifications/Module.php:221
+#: includes/Modules/Notifications/Module.php:233
 msgid "Tries"
 msgstr ""
 
@@ -2963,20 +3097,20 @@ msgstr ""
 msgid "That question type is not available on this site."
 msgstr ""
 
-#: includes/Modules/Questions/Services/QuestionService.php:362
+#: includes/Modules/Questions/Services/QuestionService.php:366
 #: includes/Modules/Questions/Strings.php:72
 msgid "This question type needs at least two answer options."
 msgstr ""
 
-#: includes/Modules/Questions/Services/QuestionService.php:389
+#: includes/Modules/Questions/Services/QuestionService.php:393
 msgid "A single-answer question needs exactly one correct option."
 msgstr ""
 
-#: includes/Modules/Questions/Services/QuestionService.php:397
+#: includes/Modules/Questions/Services/QuestionService.php:401
 msgid "Mark at least one option as correct."
 msgstr ""
 
-#: includes/Modules/Questions/Services/QuestionService.php:405
+#: includes/Modules/Questions/Services/QuestionService.php:409
 msgid "Add at least one accepted answer."
 msgstr ""
 
@@ -3196,66 +3330,74 @@ msgid "Minimum score"
 msgstr ""
 
 #: includes/Modules/Questions/Strings.php:97
-msgid "Minimum words"
+msgid "Subtract points when the wrong option is chosen."
 msgstr ""
 
 #: includes/Modules/Questions/Strings.php:98
-msgid "Maximum words"
+msgid "What a wrong answer scores, e.g. -0.33. A blank answer scores 0."
 msgstr ""
 
 #: includes/Modules/Questions/Strings.php:99
+msgid "Minimum words"
+msgstr ""
+
+#: includes/Modules/Questions/Strings.php:100
+msgid "Maximum words"
+msgstr ""
+
+#: includes/Modules/Questions/Strings.php:101
 msgid "Essays are graded by hand. This question will appear in the grading queue after each attempt."
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:102
+#: includes/Modules/Questions/Strings.php:104
 msgid "Rubric"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:103
+#: includes/Modules/Questions/Strings.php:105
 msgid "Grade with a rubric"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:104
+#: includes/Modules/Questions/Strings.php:106
 msgid "Add criterion"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:105
+#: includes/Modules/Questions/Strings.php:107
 msgid "Criterion"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:106
+#: includes/Modules/Questions/Strings.php:108
 msgid "Max points"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:108
+#: includes/Modules/Questions/Strings.php:110
 msgid "Rubric total"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:109
+#: includes/Modules/Questions/Strings.php:111
 msgid "The rubric total does not match the question’s points. Grading will cap at the question’s points."
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:112
+#: includes/Modules/Questions/Strings.php:114
 msgid "Difficulty {n}"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:113
+#: includes/Modules/Questions/Strings.php:115
 msgid "Auto-graded"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:114
+#: includes/Modules/Questions/Strings.php:116
 msgid "Graded by hand"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:116
+#: includes/Modules/Questions/Strings.php:118
 msgid "All subjects"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:117
+#: includes/Modules/Questions/Strings.php:119
 msgid "All types"
 msgstr ""
 
-#: includes/Modules/Questions/Strings.php:118
+#: includes/Modules/Questions/Strings.php:120
 msgid "No subject"
 msgstr ""
 
@@ -3288,100 +3430,101 @@ msgstr ""
 msgid "That assignment already exists."
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:95
+#: includes/Modules/Roles/Module.php:100
 msgid "Roles"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:96
+#: includes/Modules/Roles/Module.php:101
 msgid "Who may write, mark and manage exams, beyond their WordPress role."
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:97
+#: includes/Modules/Roles/Module.php:102
+#: includes/Modules/Roles/Services/Privacy.php:65
 msgid "Role"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:98
+#: includes/Modules/Roles/Module.php:103
 msgid "New role"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:101
+#: includes/Modules/Roles/Module.php:106
 msgid "Roles decide what each person can do inside the exam plugin. Administrators always have full access."
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:102
+#: includes/Modules/Roles/Module.php:107
 msgid "No roles yet."
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:103
+#: includes/Modules/Roles/Module.php:108
 msgid "Built in"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:104
+#: includes/Modules/Roles/Module.php:109
 msgid "Permissions"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:105
+#: includes/Modules/Roles/Module.php:110
 msgid "Who has this role"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:106
+#: includes/Modules/Roles/Module.php:111
 msgid "Assign to a user"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:107
+#: includes/Modules/Roles/Module.php:112
 msgid "Assign to a WordPress role"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:108
+#: includes/Modules/Roles/Module.php:113
 msgid "Nobody has been given an exam role yet, so only administrators can use the plugin."
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:109
+#: includes/Modules/Roles/Module.php:114
 msgid "Remove"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:110
+#: includes/Modules/Roles/Module.php:115
 msgid "Select all"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:111
+#: includes/Modules/Roles/Module.php:116
 msgid "Select none"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:116
+#: includes/Modules/Roles/Module.php:121
 #: includes/Modules/Subjects/Strings.php:24
 msgid "Subjects"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:118
+#: includes/Modules/Roles/Module.php:123
 msgid "Live monitoring"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:119
+#: includes/Modules/Roles/Module.php:124
 msgid "Reports"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:120
+#: includes/Modules/Roles/Module.php:125
 msgid "Cohorts"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:122
+#: includes/Modules/Roles/Module.php:127
 msgid "LTI"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:123
+#: includes/Modules/Roles/Module.php:128
 msgid "Webhooks"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:124
+#: includes/Modules/Roles/Module.php:129
 msgid "API tokens"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:125
+#: includes/Modules/Roles/Module.php:130
 msgid "Enrolments"
 msgstr ""
 
-#: includes/Modules/Roles/Module.php:126
+#: includes/Modules/Roles/Module.php:131
 msgid "Configuration"
 msgstr ""
 
@@ -3423,6 +3566,15 @@ msgstr ""
 
 #: includes/Modules/Roles/Services/DefaultRoles.php:170
 msgid "Read-only access to content and results."
+msgstr ""
+
+#: includes/Modules/Roles/Services/Privacy.php:37
+#: includes/Modules/Roles/Services/Privacy.php:61
+msgid "Exam staff roles"
+msgstr ""
+
+#: includes/Modules/Roles/Services/Privacy.php:69
+msgid "Assigned"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:79
@@ -3894,12 +4046,12 @@ msgstr ""
 msgid "This page had been open for a while, so nothing was started. Please press the button again."
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:70
+#: templates/frontend/parts/exam-body.php:72
 msgid "Sorry — that could not be started. Please check your details and try again."
 msgstr ""
 
 #. translators: %d: number of minutes.
-#: templates/frontend/parts/exam-body.php:92
+#: templates/frontend/parts/exam-body.php:94
 #: templates/frontend/parts/exam-card.php:70
 #, php-format
 msgid "%d minute"
@@ -3908,43 +4060,51 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: the date the learner last sat this exam.
-#: templates/frontend/parts/exam-body.php:138
+#: templates/frontend/parts/exam-body.php:140
 #, php-format
 msgid "last sat %s"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:162
+#: templates/frontend/parts/exam-body.php:164
 msgid "Resume"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:162
+#: templates/frontend/parts/exam-body.php:164
 msgid "Start"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:181
-#: templates/frontend/parts/exam-body.php:204
+#: templates/frontend/parts/exam-body.php:183
+#: templates/frontend/parts/exam-body.php:228
 msgid "Continue"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:194
+#: templates/frontend/parts/exam-body.php:196
 msgid "Your name"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:199
+#: templates/frontend/parts/exam-body.php:201
 msgid "Your email"
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:201
+#: templates/frontend/parts/exam-body.php:203
 msgid "We use this to send you your result."
 msgstr ""
 
-#: templates/frontend/parts/exam-body.php:212
+#: templates/frontend/parts/exam-body.php:217
+msgid "How we use your details"
+msgstr ""
+
+#: templates/frontend/parts/exam-body.php:224
+msgid "I agree to my name, email address and answers being kept to run and mark this exam."
+msgstr ""
+
+#: templates/frontend/parts/exam-body.php:236
 #: templates/frontend/parts/signed-out.php:36
 msgid "Log in"
 msgstr ""
 
 #. translators: 1: attempts used, 2: attempts allowed.
-#: templates/frontend/parts/exam-body.php:226
+#: templates/frontend/parts/exam-body.php:250
 #, php-format
 msgid "You have used %1$d of %2$d attempts."
 msgstr ""
@@ -4086,12 +4246,8 @@ msgstr ""
 msgid "It was valid until %s. The award itself still stands."
 msgstr ""
 
-#: templates/frontend/verify.php:95
+#: templates/frontend/verify.php:98
 msgid "For"
-msgstr ""
-
-#: templates/frontend/verify.php:101
-msgid "Certificate number"
 msgstr ""
 
 #: blocks/catalogue/index.js:54

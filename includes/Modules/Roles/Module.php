@@ -46,7 +46,12 @@ final class Module implements ModuleInterface {
 	}
 
 	public function register_services( Container $container ): void {
-		unset( $container );
+		// PRIVACY LIVES HERE, not in `register_hooks()`, which does not run when this app is
+		// switched off in the App Manager (NFR-ORG-6). See Services\Privacy.
+		add_filter(
+			'plugixa_exam_personal_data_providers',
+			static fn ( array $providers ): array => $container->get( Services\Privacy::class )->provider( $providers )
+		);
 	}
 
 	public function register_routes( Container $container ): void {

@@ -189,6 +189,30 @@ final class QueueRepository extends Repository {
 	}
 
 	/**
+	 * Delete messages that FAILED longer ago than a site keeps them.
+	 *
+	 * `prune()` only ever removed sent mail, so a message that could not be delivered — its
+	 * recipient's address, name and the full body with their score — stayed for good. This
+	 * is the retention setting `privacy_failed_days`, off by default; a failed message is a
+	 * diagnostic for whoever runs the site, and only they know how long they need it.
+	 *
+	 * @param int $days How long to keep them.
+	 */
+	public function prune_failed( int $days ): int {
+		global $wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table; prepared.
+		return (int) $wpdb->query(
+			$wpdb->prepare(
+				'DELETE FROM %i WHERE status = %s AND created_at < %s',
+				$this->full_table(),
+				'failed',
+				gmdate( 'Y-m-d H:i:s', time() - max( 1, $days ) * DAY_IN_SECONDS )
+			)
+		);
+	}
+
+	/**
 	 * @param int $id Queue row id.
 	 */
 	private function attempts_of( int $id ): int {

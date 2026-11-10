@@ -94,6 +94,8 @@ final class Strings {
 			'negativeMarking'      => __( 'Negative marking', 'plugixa-exam' ),
 			'negativeMarkingHelp'  => __( 'Subtract points for each incorrect option selected.', 'plugixa-exam' ),
 			'minScore'             => __( 'Minimum score', 'plugixa-exam' ),
+			'negativeMarkingSingleHelp' => __( 'Subtract points when the wrong option is chosen.', 'plugixa-exam' ),
+			'minScoreSingleHelp'   => __( 'What a wrong answer scores, e.g. -0.33. A blank answer scores 0.', 'plugixa-exam' ),
 			'minWords'             => __( 'Minimum words', 'plugixa-exam' ),
 			'maxWords'             => __( 'Maximum words', 'plugixa-exam' ),
 			'essayManualNote'      => __( 'Essays are graded by hand. This question will appear in the grading queue after each attempt.', 'plugixa-exam' ),
