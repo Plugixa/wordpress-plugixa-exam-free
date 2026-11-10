@@ -4,7 +4,7 @@ Tags: exam, quiz, assessment, elearning, education
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,7 +97,7 @@ Records live in the plugin's **own database tables**, not in posts and post meta
 
 **Selling and connecting**
 
-* Selling exams through WooCommerce - access for a period, attempts, renewals and refunds
+* Selling exams through WooCommerce - access for a period, attempts, renewals, refunds and passes to many exams
 * Bridges into Tutor LMS, LearnDash and LifterLMS
 * Webhooks, LTI 1.3 and API tokens
 
@@ -230,7 +230,7 @@ Full documentation - getting started, the question bank, the exam builder, marki
 == External services ==
 
 This plugin connects to no external service of its own choosing. It loads no fonts from a
-CDN — the KaTeX fonts used by the premium maths rendering are bundled — and it never
+CDN (the KaTeX fonts used by the premium maths rendering are bundled), and it never
 contacts plugixa.com: our address appears in the plugin header and in copyright notices, and
 no code calls it.
 
@@ -244,8 +244,8 @@ Privacy Policy: https://www.plugixa.com/privacy-policy
 
 = Freemius (free and premium) =
 
-What it is and why: Freemius, Inc. provides licensing, plugin updates and checkout, plus —
-only if you opt in — anonymous usage diagnostics.
+What it is and why: Freemius, Inc. provides licensing, plugin updates and checkout, plus,
+only if you opt in, anonymous usage diagnostics.
 
 What is sent and when: on activation you are shown an opt-in screen. If you skip it, no
 identifiable data is sent. If you opt in, or when you activate or manage a licence or make a
@@ -258,8 +258,8 @@ Privacy Policy: https://freemius.com/privacy/
 
 = AI question writing (premium only, and only with an API key you supply) =
 
-What it is and why: the plugin can draft questions from source material you paste — a
-syllabus, a page of notes, a chapter — so you have something to edit instead of a blank
+What it is and why: the plugin can draft questions from source material you paste (a
+syllabus, a page of notes, a chapter), so you have something to edit instead of a blank
 form. To do that it sends your material to a language-model provider that you choose and
 pay for directly.
 
@@ -273,13 +273,13 @@ bank until you accept it.
 There is no default key and no key is bundled. Until an administrator enters one under
 Settings, AI, this feature makes no request at all and the screen says so. The key is
 stored on your own site, is never included in any response the plugin sends to a browser,
-and is transmitted only to the endpoint you configured — over https, unless that endpoint
+and is transmitted only to the endpoint you configured, over https, unless that endpoint
 is on your own machine or private network.
 
 Whose service it is: whichever provider you choose and hold an account with. The plugin
 ships two ways to connect and no relationship with either company.
 
-OpenAI, and any service that speaks its chat-completions API — which includes Azure OpenAI,
+OpenAI, and any service that speaks its chat-completions API, which includes Azure OpenAI,
 OpenRouter, Groq, Together, and local runtimes such as Ollama and LM Studio, reached by
 changing the endpoint:
 Terms of Use: https://openai.com/policies/terms-of-use
@@ -298,10 +298,10 @@ What it is and why: if you register a webhook endpoint, the plugin sends an HTTP
 when an attempt is submitted, graded or re-marked, when a certificate is issued, or when
 someone's access to an exam starts or ends, so another system of yours can react.
 
-What is sent and when: the event name and the record it concerns — an attempt (exam, score,
+What is sent and when: the event name and the record it concerns: an attempt (exam, score,
 result, the candidate's user ID and a guest's email address), a certificate (number,
 recipient's name, user ID, verification link) or an access grant (exam, user ID, dates, what
-granted it) —
+granted it),
 signed with a secret the plugin generates, at the moment the event happens. It is sent only to
 addresses an administrator has entered. There is no default endpoint, private and reserved
 network addresses are refused unless you deliberately allow them, and no data leaves the
@@ -350,6 +350,16 @@ plugin ships no default platform and contacts nothing until you register one.
 20. Learner portal - what has been assigned, what was scored and what was earned
 
 == Changelog ==
+
+= 1.4.0 =
+* New in premium: passes. A WooCommerce product can now cover every exam in chosen subjects, or every exam on the site, instead of a fixed list. A pass also covers exams added later. Sell a monthly all-access pass, a yearly course bundle, or a pack of attempts to use on any exam.
+* New in premium: a pass counts its attempts for each exam (3 attempts = 3 sittings of every exam) or in total across every exam, like credits.
+* New in premium: grant a pass by hand under People → Enrolments, and filter that screen by single exams or passes.
+* New in premium: five exam screen designs (Exam Hall, Split Screen, Focus, Classroom and Mobile), chosen for the whole site or per exam, with their colours and font customisable for the site and for each exam.
+* Improved: the exam page offers the exam's own products first and the passes that cover it underneath, each saying what it covers.
+* Improved: a renewal extends a purchase of the same kind only. A single exam bought during a monthly pass gets its own period.
+* Fixed: plain-text order emails and the product page no longer use a long dash.
+* Fixed: in an exam's Add questions window, the select-all checkbox did nothing. It now selects the whole page, and a new "Select all N matching" link picks every question the filter finds. Sections with more than 200 questions no longer show "not found".
 
 = 1.3.0 =
 * New: Tools → Erase Personal Data now reaches every exam record that names a person. Certificates are withdrawn (the public page says "withdrawn" and shows no name), uploaded files are deleted from disk, and passage notes, learning-platform (LTI) logins, alerts, group memberships, leaderboard names, webhook payloads, staff roles, API tokens and invigilation access are removed.
@@ -407,8 +417,8 @@ plugin ships no default platform and contacts nothing until you register one.
 * Premium: the leaderboard block's settings are translated.
 
 = 1.1.1 =
-* File answers are saved through WordPress's own uploader, so whatever a site attaches to uploads — a security scanner, a storage quota — now applies to handed-in work too. The files stay in their private folder and never appear in the media library.
-* Fixed: after the plugin was deactivated or deleted, its addresses — /exams/, /my-exams/, a result, a certificate check — went on answering with the site's home page instead of "not found".
+* File answers are saved through WordPress's own uploader, so whatever a site attaches to uploads (a security scanner, a storage quota) now applies to handed-in work too. The files stay in their private folder and never appear in the media library.
+* Fixed: after the plugin was deactivated or deleted, its addresses (/exams/, /my-exams/, a result, a certificate check) went on answering with the site's home page instead of "not found".
 * Fixed: activating the plugin on a site that also runs WooCommerce wrote two "translation loading was triggered too early" notices to the debug log.
 * The plugin's translations are registered the way current WordPress expects, with no change to which languages load.
 * The download no longer carries a build script from a bundled library.
@@ -428,9 +438,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * The Withdraw dialog has a field for the reason it asks for, and the certificate list shows why each certificate was withdrawn.
 * LMS bridge: verified end to end against Tutor LMS, LifterLMS and LearnDash 5.1.10.
 * LMS bridge: a linked course is completed when a marker turns a fail into a pass, and not before the exam's results are released.
-* LMS bridge: a learner who loses access to an exam partway through a paper — unenrolled from the linked course, for example — can no longer save or submit it. Restoring their access lets them carry on where they stopped.
+* LMS bridge: a learner who loses access to an exam partway through a paper (unenrolled from the linked course, for example) can no longer save or submit it. Restoring their access lets them carry on where they stopped.
 * LMS bridge: the course picker is on the exam's Access tab, searches every course, and warns when the exam's settings mean the link would keep nobody out. A link is checked when it is saved: the course must be published, and a nominated lesson must belong to it.
-* LearnDash: an exam limited to a course's learners admits only people LearnDash itself still lets in — no longer anyone whose access has expired or whose group has ended. An Open course cannot be linked, because nobody enrols on it.
+* LearnDash: an exam limited to a course's learners admits only people LearnDash itself still lets in, no longer anyone whose access has expired or whose group has ended. An Open course cannot be linked, because nobody enrols on it.
 * LTI: the score sent back to the LMS gradebook follows a marker's corrections, and waits until the exam's results are released.
 * The plugin's entry in the WordPress admin menu is now called "Plugixa Exams".
 * An "Exam access" box on WooCommerce's order screen shows what an order holds, with a button to re-sync it.
@@ -447,6 +457,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.4.0 =
+Premium adds passes (every exam in a subject, or every exam) and five exam screen designs. Existing products and purchases keep working unchanged.
 
 = 1.3.0 =
 Erasing a person now also withdraws their certificates and deletes their uploads. New options under Settings → Privacy are off until you turn them on. Adds negative marking for single-answer questions and Add media in every editor.

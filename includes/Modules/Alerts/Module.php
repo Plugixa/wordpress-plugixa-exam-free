@@ -224,8 +224,8 @@ final class Module implements ModuleInterface {
 				'alertsDesc' => __( 'A notice inbox for each person: results ready, papers to mark.', 'plugixa-exam' ),
 				'alertsEmpty'     => __( 'Nothing to catch up on.', 'plugixa-exam' ),
 				'alertsMarkRead'  => __( 'Mark all read', 'plugixa-exam' ),
-				'alertNeedsMark'  => __( 'A paper needs marking — {name}', 'plugixa-exam' ),
-				'alertResult'     => __( 'Your result is ready — {name}', 'plugixa-exam' ),
+				'alertNeedsMark'  => __( 'A paper needs marking: {name}', 'plugixa-exam' ),
+				'alertResult'     => __( 'Your result is ready: {name}', 'plugixa-exam' ),
 			)
 		);
 	}

@@ -323,10 +323,16 @@ final class PaperBuilder {
 			?? (float) $question['default_points'];
 
 		return array(
-			'id'         => (int) $question['id'],
-			'type'       => (string) $question['question_type'],
-			'section_id' => (int) $section['id'],
-			'points'     => round( (float) $points, 2 ),
+			'id'            => (int) $question['id'],
+			'type'          => (string) $question['question_type'],
+			'section_id'    => (int) $section['id'],
+			/*
+			 * Frozen with the rest, because saving an exam rebuilds its sections under new
+			 * ids: a title looked up live by the frozen id vanishes the moment an author
+			 * saves while somebody is sitting the paper.
+			 */
+			'section_title' => (string) ( $section['title'] ?? '' ),
+			'points'        => round( (float) $points, 2 ),
 		);
 	}
 }

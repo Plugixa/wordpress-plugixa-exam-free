@@ -79,22 +79,22 @@ final class Module implements ModuleInterface {
 				'settingsPages'            => __( 'Pages', 'plugixa-exam' ),
 				'settingsPagesIntro'       => __( 'Put the exam area on pages of your own, so it sits in your site’s menu under your own names. Anything you leave unset keeps working at the plugin’s built-in address.', 'plugixa-exam' ),
 				'settingsPagesSection'     => __( 'Where each page lives', 'plugixa-exam' ),
-				'settingsPagesSectionHelp' => __( 'Every link the plugin builds — catalogue cards, the Start button, results emails — follows whatever you choose here.', 'plugixa-exam' ),
+				'settingsPagesSectionHelp' => __( 'Every link the plugin builds (catalogue cards, the Start button, results emails) follows whatever you choose here.', 'plugixa-exam' ),
 
 				'pagesCreate'        => __( 'Create the missing pages', 'plugixa-exam' ),
 				'pagesCreating'      => __( 'Creating…', 'plugixa-exam' ),
 				'pagesCreated'       => __( 'Pages created.', 'plugixa-exam' ),
 				'pagesAllSet'        => __( 'All set', 'plugixa-exam' ),
 				'pagesNotSet'        => __( 'Not set', 'plugixa-exam' ),
-				'pagesUsesRoute'     => __( 'Not set — the plugin’s own address is used.', 'plugixa-exam' ),
-				'pagesNoRoute'       => __( 'Not set — this one has no built-in address, so create a page for it.', 'plugixa-exam' ),
+				'pagesUsesRoute'     => __( 'Not set. The plugin’s own address is used.', 'plugixa-exam' ),
+				'pagesNoRoute'       => __( 'Not set. This one has no built-in address, so create a page for it.', 'plugixa-exam' ),
 				'pagesDraftWarning'  => __( 'This page is not published, so the plugin is using its built-in address instead.', 'plugixa-exam' ),
-				'pagesStandalone'    => __( 'On “{page}”. Nothing links here automatically — add it to your menu.', 'plugixa-exam' ),
+				'pagesStandalone'    => __( 'On “{page}”. Nothing links here automatically. Add it to your menu.', 'plugixa-exam' ),
 				'pagesView'          => __( 'View', 'plugixa-exam' ),
 				'pagesEdit'          => __( 'Edit', 'plugixa-exam' ),
 
 				'pagesMenuSection'     => __( 'Putting them in your menu', 'plugixa-exam' ),
-				'pagesMenuSectionHelp' => __( 'Creating the pages is all this plugin can do on its own — where they appear in your navigation is your theme’s business.', 'plugixa-exam' ),
+				'pagesMenuSectionHelp' => __( 'Creating the pages is all this plugin can do on its own. Where they appear in your navigation is your theme’s business.', 'plugixa-exam' ),
 				'pagesMenuBlockTheme'  => __( 'Your theme is a block theme, so it has no menu locations a plugin can fill. Add the pages to the Navigation block in the site editor.', 'plugixa-exam' ),
 				'pagesMenuClassic'     => __( 'Your theme uses classic menus. Add the pages to a menu and assign it to a location.', 'plugixa-exam' ),
 				'pagesOpenEditor'      => __( 'Open the site editor', 'plugixa-exam' ),
@@ -110,7 +110,7 @@ final class Module implements ModuleInterface {
 				'settingsIntro'        => __( 'How this site writes numbers, what colour its exams are, and which features are switched on.', 'plugixa-exam' ),
 
 				'settingsFormatting'     => __( 'Number formatting', 'plugixa-exam' ),
-				'settingsFormattingHelp' => __( 'How every mark, total and percentage is written — on these screens, in emails, on certificates and on the result page a candidate sees.', 'plugixa-exam' ),
+				'settingsFormattingHelp' => __( 'How every mark, total and percentage is written: on these screens, in emails, on certificates and on the result page a candidate sees.', 'plugixa-exam' ),
 				'decimalPlaces'          => __( 'Decimal places', 'plugixa-exam' ),
 				'decimalPlacesHelp'      => __( 'Zero to six.', 'plugixa-exam' ),
 				'decimalSeparator'       => __( 'Decimal separator', 'plugixa-exam' ),
@@ -138,11 +138,11 @@ final class Module implements ModuleInterface {
 				'settingsColoursHelp' => __( 'Three separate questions, not seven loose swatches: the brand, the page a candidate sits an exam on, and how right and wrong are shown.', 'plugixa-exam' ),
 
 				'colourGroupBrand'       => __( 'Brand', 'plugixa-exam' ),
-				'colourGroupBrandHelp'   => __( 'Used on both these admin screens and the exam pages candidates see. Primary and its contrast are a pair — the contrast colour is what prints on top of the primary one.', 'plugixa-exam' ),
+				'colourGroupBrandHelp'   => __( 'Used on both these admin screens and the exam pages candidates see. Primary and its contrast are a pair: the contrast colour is what prints on top of the primary one.', 'plugixa-exam' ),
 				'colourGroupExam'        => __( 'Exam pages', 'plugixa-exam' ),
 				'colourGroupExamHelp'    => __( 'The exam pages only. These do not change wp-admin, which WordPress and your admin colour scheme own.', 'plugixa-exam' ),
 				'colourGroupMarking'     => __( 'Marking', 'plugixa-exam' ),
-				'colourGroupMarkingHelp' => __( 'Right and wrong, wherever an answer is shown as one or the other — the review screen, the result page, the marking queue.', 'plugixa-exam' ),
+				'colourGroupMarkingHelp' => __( 'Right and wrong, wherever an answer is shown as one or the other: the review screen, the result page, the marking queue.', 'plugixa-exam' ),
 
 				// The live preview panel. Sample content, so it is deliberately generic —
 				// nothing here names a real exam, subject or candidate.
@@ -163,7 +163,7 @@ final class Module implements ModuleInterface {
 				'color_correct'          => __( 'Correct', 'plugixa-exam' ),
 				'color_incorrect'        => __( 'Incorrect', 'plugixa-exam' ),
 
-				'appsIntro'    => __( 'Switching a feature off hides it and stops its background work. Nothing is deleted — turn it back on and your data is exactly as you left it.', 'plugixa-exam' ),
+				'appsIntro'    => __( 'Switching a feature off hides it and stops its background work. Nothing is deleted. Turn it back on and your data is exactly as you left it.', 'plugixa-exam' ),
 				'appsRejected' => __( 'These cannot be changed', 'plugixa-exam' ),
 				'appCore'      => __( 'Always on', 'plugixa-exam' ),
 				'settingsSaved' => __( 'Settings saved.', 'plugixa-exam' ),

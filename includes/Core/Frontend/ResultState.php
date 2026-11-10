@@ -296,7 +296,7 @@ final class ResultState {
 			'scoreLine'    => $pxe_released
 				? sprintf(
 					/* translators: 1: percentage, 2: points scored, 3: points available. */
-					__( '%1$s%% — %2$s of %3$s points', 'plugixa-exam' ),
+					__( '%1$s%% (%2$s of %3$s points)', 'plugixa-exam' ),
 					plugixa_exam_format_number( (float) $pxe_attempt['percent'] ),
 					plugixa_exam_format_number( (float) $pxe_attempt['score'] ),
 					plugixa_exam_format_number( (float) $pxe_attempt['max_score'] )

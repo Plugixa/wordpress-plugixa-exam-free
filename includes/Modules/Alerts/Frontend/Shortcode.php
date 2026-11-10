@@ -126,11 +126,11 @@ final class Shortcode {
 		switch ( $type ) {
 			case 'result_ready':
 				/* translators: %s is the exam title. */
-				return sprintf( __( 'Your result is ready — %s', 'plugixa-exam' ), $subject );
+				return sprintf( __( 'Your result is ready: %s', 'plugixa-exam' ), $subject );
 
 			case 'needs_marking':
 				/* translators: %s is the exam title. */
-				return sprintf( __( 'A paper needs marking — %s', 'plugixa-exam' ), $subject );
+				return sprintf( __( 'A paper needs marking: %s', 'plugixa-exam' ), $subject );
 
 			default:
 				return $subject;

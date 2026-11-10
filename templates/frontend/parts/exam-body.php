@@ -69,7 +69,7 @@ if ( '' !== $pxe_error ) :
 		} elseif ( 'plugixa_exam_bad_code' === $pxe_error ) {
 			$pxe_error_message = __( 'That did not work. Please check your details and try again.', 'plugixa-exam' );
 		} else {
-			$pxe_error_message = __( 'Sorry — that could not be started. Please check your details and try again.', 'plugixa-exam' );
+			$pxe_error_message = __( 'Sorry, that could not be started. Please check your details and try again.', 'plugixa-exam' );
 		}
 
 		echo esc_html( $pxe_error_message );

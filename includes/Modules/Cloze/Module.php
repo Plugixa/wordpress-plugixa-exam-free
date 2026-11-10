@@ -182,7 +182,7 @@ final class Module implements ModuleInterface {
 				 * and "1 blanks", and no single `_n()` can fix it because TWO counts vary
 				 * independently. Labelled counts are always correct, in every language.
 				 */
-				'clozeMarkerMismatch' => __( 'Markers in the passage: {markers} · Blanks defined: {blanks} — these should match.', 'plugixa-exam' ),
+				'clozeMarkerMismatch' => __( 'Markers in the passage: {markers} · Blanks defined: {blanks}. These should match.', 'plugixa-exam' ),
 				'ignoreCase'          => __( 'Ignore capitals', 'plugixa-exam' ),
 				'clozeAddBlank'       => __( 'Add a blank', 'plugixa-exam' ),
 			)

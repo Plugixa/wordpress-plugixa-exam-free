@@ -194,7 +194,7 @@ final class Module implements ModuleInterface {
 				/* translators: %d is a number. */
 				'nUnmarked'                => __( '%d still unmarked', 'plugixa-exam' ),
 				'needsMarking'             => __( 'Needs marking', 'plugixa-exam' ),
-				'noAnswerGiven'            => __( '— no answer given —', 'plugixa-exam' ),
+				'noAnswerGiven'            => __( '(no answer given)', 'plugixa-exam' ),
 				'notPassed'                => __( 'Not passed', 'plugixa-exam' ),
 				/* translators: %d is a number. */
 				'outOfN'                   => __( 'out of %s', 'plugixa-exam' ),

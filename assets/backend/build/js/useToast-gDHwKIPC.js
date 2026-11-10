@@ -1,0 +1,1 @@
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{on as t}from"./PageContainer-BYh3h-w0.js";import{vt as n}from"./main-BHaQQ5N0.js";var r=e(t(),1);function i(){let{enqueueSnackbar:e}=n();return{success:(0,r.useCallback)(t=>e(t,{variant:`success`}),[e]),error:(0,r.useCallback)(t=>e(typeof t==`string`?t:t.message,{variant:`error`,persist:!0}),[e])}}export{i as t};

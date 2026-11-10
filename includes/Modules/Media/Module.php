@@ -165,7 +165,7 @@ final class Module implements ModuleInterface {
 				'visualNoImage'        => __( 'No picture chosen yet.', 'plugixa-exam' ),
 				'visualImageChosen'    => __( 'A picture is set.', 'plugixa-exam' ),
 				'visualImagesHelp'     => __( 'Every option needs a picture. Reordering the options moves the pictures with them.', 'plugixa-exam' ),
-				'visualNeedsOptions'   => __( 'Add the options above first — there is nothing to illustrate until then.', 'plugixa-exam' ),
+				'visualNeedsOptions'   => __( 'Add the options above first. There is nothing to illustrate until then.', 'plugixa-exam' ),
 				'visualUntitledOption' => __( 'Option {n}', 'plugixa-exam' ),
 			)
 		);

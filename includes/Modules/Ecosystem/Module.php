@@ -309,7 +309,7 @@ final class Module implements ModuleInterface {
 				'privacyTools'           => __( 'Privacy tools', 'plugixa-exam' ),
 				'privacyToolsHelp'       => __( 'Exam data is included in the personal-data export and erasure that WordPress runs from Tools → Export Personal Data. This is always on.', 'plugixa-exam' ),
 				'settingsPrivacy'          => __( 'Privacy', 'plugixa-exam' ),
-				'privacyAlwaysOn'          => __( 'always on — there is nothing to switch on for a personal-data request to include exam data.', 'plugixa-exam' ),
+				'privacyAlwaysOn'          => __( 'always on. Personal-data requests include exam data automatically.', 'plugixa-exam' ),
 				'privacyEraseOnDelete'     => __( 'When a user account is deleted, erase its exam data too', 'plugixa-exam' ),
 				'privacyGuestsTitle'       => __( 'Guests', 'plugixa-exam' ),
 				'privacyGuestLink'         => __( 'Link to the privacy policy under the guest form', 'plugixa-exam' ),

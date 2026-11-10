@@ -130,7 +130,7 @@ final class AttemptService {
 		if ( 0 === $id ) {
 			return new WP_Error(
 				'plugixa_exam_start_failed',
-				__( 'Sorry — this exam could not be started. Please try again, or contact the site administrator.', 'plugixa-exam' ),
+				__( 'Sorry, this exam could not be started. Please try again, or contact the site administrator.', 'plugixa-exam' ),
 				array( 'status' => 500 )
 			);
 		}

@@ -27,7 +27,7 @@ final class Strings {
 			'newQuestion'          => __( 'New question', 'plugixa-exam' ),
 			'editQuestion'         => __( 'Edit question', 'plugixa-exam' ),
 			'questionsEmpty'       => __( 'Your question bank is empty. Add a question to get started.', 'plugixa-exam' ),
-			'questionsIntro'       => __( 'Every exam is built from questions in this bank — either picked one by one, or drawn at random from a subject.', 'plugixa-exam' ),
+			'questionsIntro'       => __( 'Every exam is built from questions in this bank: either picked one by one, or drawn at random from a subject.', 'plugixa-exam' ),
 
 			// The editor's in-card section headings.
 			'questionSectionBasics'  => __( 'Basic information', 'plugixa-exam' ),

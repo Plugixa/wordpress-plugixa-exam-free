@@ -144,6 +144,16 @@ final class Config {
 			 */
 			'apps'        => $apps->enabled_map(),
 
+			/*
+			 * `free` or `premium`. The free build shows a Pro features page and an upgrade button
+			 * to administrators; the premium build, which carries the same free code, must not.
+			 */
+			'edition'     => Edition::current(),
+
+			// Where "See Pro plans" goes. A link the admin clicks, never a request: the app's own
+			// source names no outside host (ExternalServicesTest), so the address travels from here.
+			'pricingUrl'  => Edition::PRICING_URL,
+
 			'settings'    => self::public_settings( $container->get( Settings::class ) ),
 			'i18n'        => Strings::all(),
 		);

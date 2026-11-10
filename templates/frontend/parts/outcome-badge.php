@@ -57,17 +57,17 @@ $pxe_label = match ( $pxe_state ) {
 		? __( 'Passed', 'plugixa-exam' )
 		: sprintf(
 			/* translators: %s: the learner's best score as a percentage, already formatted. */
-			__( 'Passed — %s%%', 'plugixa-exam' ),
+			__( 'Passed: %s%%', 'plugixa-exam' ),
 			plugixa_exam_format_number( (float) $pxe_percent )
 		),
 	'failed'      => null === $pxe_percent
 		? __( 'Not passed', 'plugixa-exam' )
 		: sprintf(
 			/* translators: %s: the learner's best score as a percentage, already formatted. */
-			__( 'Not passed — %s%%', 'plugixa-exam' ),
+			__( 'Not passed: %s%%', 'plugixa-exam' ),
 			plugixa_exam_format_number( (float) $pxe_percent )
 		),
-	'awaiting'    => __( 'Submitted — awaiting result', 'plugixa-exam' ),
+	'awaiting'    => __( 'Submitted, awaiting result', 'plugixa-exam' ),
 	'in_progress' => __( 'In progress', 'plugixa-exam' ),
 	default       => '',
 };

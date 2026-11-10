@@ -147,7 +147,7 @@ final class Module implements ModuleInterface {
 				'newTag'          => __( 'New tag', 'plugixa-exam' ),
 				'tagName'         => __( 'Name', 'plugixa-exam' ),
 				'tagsEmpty'       => __( 'No tags yet. Tags let a random-draw section narrow which questions it can pull.', 'plugixa-exam' ),
-				'tagsIntro'       => __( 'Tags are flat labels that cut across subjects — “calculator allowed”, “past paper”, “diagram”.', 'plugixa-exam' ),
+				'tagsIntro'       => __( 'Tags are flat labels that cut across subjects: “calculator allowed”, “past paper”, “diagram”.', 'plugixa-exam' ),
 				'tagUsage'        => __( 'Used by', 'plugixa-exam' ),
 				'tagDeleteWarn'   => __( 'Deleting a tag removes it from every question that carries it.', 'plugixa-exam' ),
 			)

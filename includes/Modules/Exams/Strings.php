@@ -27,7 +27,7 @@ final class Strings {
 			'newExam'        => __( 'New exam', 'plugixa-exam' ),
 			'editExam'       => __( 'Edit exam', 'plugixa-exam' ),
 			'examsEmpty'     => __( 'No exams yet. Build one from the questions in your bank.', 'plugixa-exam' ),
-			'examsIntro'     => __( 'An exam is a set of sections — either a list of questions you choose, or a rule that draws them at random.', 'plugixa-exam' ),
+			'examsIntro'     => __( 'An exam is a set of sections: either a list of questions you choose, or a rule that draws them at random.', 'plugixa-exam' ),
 
 			// Tabs.
 			'tabGeneral'     => __( 'General', 'plugixa-exam' ),
@@ -141,7 +141,7 @@ final class Strings {
 			'examHasNoQuestions'       => __( 'No section will produce a question, so this exam cannot be sat.', 'plugixa-exam' ),
 			'examLayout'               => __( 'Layout', 'plugixa-exam' ),
 			'examPassMark'             => __( 'Pass mark', 'plugixa-exam' ),
-			'examPublishedLabel'       => __( 'Published — visible in the catalogue', 'plugixa-exam' ),
+			'examPublishedLabel'       => __( 'Published (visible in the catalogue)', 'plugixa-exam' ),
 			'examSlug'                 => __( 'URL slug', 'plugixa-exam' ),
 			'examSlugHelp'             => __( 'Leave empty to build one from the title.', 'plugixa-exam' ),
 			'examTimeLimit'            => __( 'Time limit', 'plugixa-exam' ),
@@ -168,6 +168,11 @@ final class Strings {
 			'noSectionsYet'            => __( 'This exam has no sections, so there is nothing to sit. Add one to begin.', 'plugixa-exam' ),
 			'noTimeLimit'              => __( 'No limit', 'plugixa-exam' ),
 			'noneSelected'             => __( 'Nothing selected', 'plugixa-exam' ),
+			'pageAllSelected'          => __( 'Every question on this page is selected.', 'plugixa-exam' ),
+			'allMatchingSelected'      => __( 'Every question matching these filters is selected.', 'plugixa-exam' ),
+			/* translators: %d is a number of questions. */
+			'selectAllMatching'        => __( 'Select all %d matching', 'plugixa-exam' ),
+			'clearSelection'           => __( 'Clear selection', 'plugixa-exam' ),
 			'notifyAuto'               => __( 'As the exam normally would', 'plugixa-exam' ),
 			'notifyNormal'             => __( 'Always', 'plugixa-exam' ),
 			'notifySilent'             => __( 'Never', 'plugixa-exam' ),

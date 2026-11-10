@@ -299,7 +299,7 @@ final class Module implements ModuleInterface {
 				'certificateNumberFormatHelp' => __( 'Tokens: {Y} {y} {m} {d} {seq} {seq:5} {rand} {exam}.', 'plugixa-exam' ),
 				'certificateAddDesign'  => __( 'Add a design', 'plugixa-exam' ),
 				'certificateDeleteDesign' => __( 'Delete this design?', 'plugixa-exam' ),
-				'certificateDeleteDesignHelp' => __( 'Certificates already awarded on it are unaffected — each one carries its own frozen copy.', 'plugixa-exam' ),
+				'certificateDeleteDesignHelp' => __( 'Certificates already awarded on it are unaffected. Each one carries its own frozen copy.', 'plugixa-exam' ),
 				'certificateNoneHelp'   => __( 'A certificate is issued automatically when somebody passes an exam and its marking is finished.', 'plugixa-exam' ),
 				'certificateDesignJson' => __( 'Layout (JSON, millimetres)', 'plugixa-exam' ),
 				'certificateShowJson'   => __( 'Import or export the layout as JSON', 'plugixa-exam' ),

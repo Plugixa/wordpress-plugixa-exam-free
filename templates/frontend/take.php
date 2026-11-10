@@ -126,7 +126,7 @@ require plugixa_exam_get_template( 'parts/header.php' );
 	 *
 	 * A paper can be paused overnight, and a nonce verifies for 12 to 24 hours. Past that every
 	 * autosave from a signed-in examinee came back 403 `rest_cookie_invalid_nonce` and the
-	 * runner said "Couldn't save — will retry" for ever, re-sending the same dead nonce —
+	 * runner said "Couldn't save. Trying again…" for ever, re-sending the same dead nonce —
 	 * reproduced on the dev site. The client asks WordPress core's own `rest-nonce` AJAX action
 	 * for a fresh one and retries once. A guest never gets that error: a signed-out REST request
 	 * is not nonce-checked.
@@ -183,7 +183,7 @@ require plugixa_exam_get_template( 'parts/header.php' );
 		?>
 		<div class="pxe-notice pxe-notice--error" role="alert">
 			<p class="pxe-notice__title"><?php esc_html_e( 'Your last changes were not saved.', 'plugixa-exam' ); ?></p>
-			<p class="pxe-notice__detail"><?php esc_html_e( 'This page had been open for a long time. The answers below are the ones saved before that — please check them, then save again.', 'plugixa-exam' ); ?></p>
+			<p class="pxe-notice__detail"><?php esc_html_e( 'This page had been open for a long time. The answers below are the ones saved before that. Please check them, then save again.', 'plugixa-exam' ); ?></p>
 		</div>
 	<?php endif; ?>
 

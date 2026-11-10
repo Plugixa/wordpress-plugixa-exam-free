@@ -286,7 +286,7 @@ final class Router {
 		 * stand-down was written, 10 Oct 2026. Going back to the free build flushes as well,
 		 * which takes the premium rules out again.
 		 */
-		$signature = self::RULES_VERSION . '|' . implode( ',', $languages ) . '|' . ( is_dir( PLUGIXA_EXAM_PATH . 'pro' ) ? 'premium' : 'free' );
+		$signature = self::RULES_VERSION . '|' . implode( ',', $languages ) . '|' . \PlugixaExam\Core\App\Edition::current();
 
 		if ( (string) get_option( self::LANGUAGES_OPTION, '' ) !== $signature ) {
 			update_option( self::LANGUAGES_OPTION, $signature );

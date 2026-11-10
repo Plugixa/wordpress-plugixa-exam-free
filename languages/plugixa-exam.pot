@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates 1.3.0\n"
+"Project-Id-Version: Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates 1.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugixa-exam\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-05T13:16:53+00:00\n"
+"POT-Creation-Date: 2026-11-08T08:05:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: plugixa-exam\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. Description of the plugin
 #: plugixa-exam.php
-msgid "Exams, quizzes and assessments for WordPress — a question bank, an exam builder with sections and random pools, a timed runner with autosave, and automatic grading."
+msgid "Exams, quizzes and assessments for WordPress: a question bank, an exam builder with sections and random pools, a timed runner with autosave, and automatic grading."
 msgstr ""
 
 #. Author of the plugin
@@ -114,7 +114,7 @@ msgid "Saved"
 msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:169
-msgid "Couldn't save — will retry"
+msgid "Couldn't save. Trying again…"
 msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:170
@@ -405,7 +405,7 @@ msgid "Due {date}"
 msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:276
-msgid "{percent}% — {scored} of {total} points"
+msgid "{percent}% ({scored} of {total} points)"
 msgstr ""
 
 #: includes/Core/App/FrontendStrings.php:286
@@ -627,7 +627,7 @@ msgid "You do not have access to this area."
 msgstr ""
 
 #: includes/Core/App/Strings.php:104
-msgid "Couldn't reach the site — will retry"
+msgid "Couldn't reach the site. Trying again…"
 msgstr ""
 
 #: includes/Core/App/Strings.php:107
@@ -650,7 +650,215 @@ msgstr ""
 msgid "Delete this item?"
 msgstr ""
 
-#: includes/Core/App/Strings.php:112
+#: includes/Core/App/Strings.php:114
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/Core/App/Strings.php:115
+msgid "See Pro features"
+msgstr ""
+
+#: includes/Core/App/Strings.php:116
+msgid "Plugixa Exam Pro"
+msgstr ""
+
+#: includes/Core/App/Strings.php:117
+msgid "Everything in the free plugin keeps working. Pro adds the tools below for larger exams, selling access and connecting other systems. Your exams, questions and results stay as they are when you upgrade."
+msgstr ""
+
+#: includes/Core/App/Strings.php:118
+msgid "See Pro plans"
+msgstr ""
+
+#: includes/Core/App/Strings.php:119
+msgid "Already bought Pro? Download it from your Plugixa account and install it. It takes over from this plugin and keeps all your data."
+msgstr ""
+
+#: includes/Core/App/Strings.php:120
+msgid "Compare plans"
+msgstr ""
+
+#: includes/Core/App/Strings.php:121
+msgid "Questions and papers"
+msgstr ""
+
+#: includes/Core/App/Strings.php:122
+msgid "Monitoring and results"
+msgstr ""
+
+#: includes/Core/App/Strings.php:123
+msgid "Selling and connecting"
+msgstr ""
+
+#: includes/Core/App/Strings.php:124
+msgid "Organising"
+msgstr ""
+
+#: includes/Core/App/Strings.php:125
+msgid "Seven more question types"
+msgstr ""
+
+#: includes/Core/App/Strings.php:126
+msgid "Ordering, matching, extended matching, hotspot, image matching, range and file upload."
+msgstr ""
+
+#: includes/Core/App/Strings.php:127
+msgid "Reading and listening papers"
+msgstr ""
+
+#: includes/Core/App/Strings.php:128
+msgid "Highlighting, notes, and recordings that play a set number of times."
+msgstr ""
+
+#: includes/Core/App/Strings.php:129
+msgid "Practice mode and maths"
+msgstr ""
+
+#: includes/Core/App/Strings.php:130
+msgid "Feedback after each question, and LaTeX formulas that render properly."
+msgstr ""
+
+#: includes/Core/App/Strings.php:131
+msgid "AI question drafting"
+msgstr ""
+
+#: includes/Core/App/Strings.php:132
+msgid "Draft questions for review with your own AI provider key."
+msgstr ""
+
+#: includes/Core/App/Strings.php:133
+msgid "Five exam screen designs"
+msgstr ""
+
+#: includes/Core/App/Strings.php:134
+msgid "Exam Hall, Split Screen, Focus, Classroom and Mobile, in your colours."
+msgstr ""
+
+#: includes/Core/App/Strings.php:135
+msgid "Version history"
+msgstr ""
+
+#: includes/Core/App/Strings.php:136
+msgid "See and restore earlier versions of questions and exams."
+msgstr ""
+
+#: includes/Core/App/Strings.php:137
+msgid "Live invigilation"
+msgstr ""
+
+#: includes/Core/App/Strings.php:138
+msgid "Watch every candidate on a real-time board while the exam runs."
+msgstr ""
+
+#: includes/Core/App/Strings.php:139
+msgid "Analytics"
+msgstr ""
+
+#: includes/Core/App/Strings.php:140
+msgid "Item analysis, and reports sent on a schedule."
+msgstr ""
+
+#: includes/Core/App/Strings.php:141
+msgid "Gradebook"
+msgstr ""
+
+#: includes/Core/App/Strings.php:142
+msgid "Letter grades and weighted transcripts across exams."
+msgstr ""
+
+#: includes/Core/App/Strings.php:143
+msgid "Certificate designer"
+msgstr ""
+
+#: includes/Core/App/Strings.php:144
+msgid "Drag-and-drop designs, and a different certificate for each exam."
+msgstr ""
+
+#: includes/Core/App/Strings.php:145
+msgid "Integrity signals"
+msgstr ""
+
+#: includes/Core/App/Strings.php:146
+msgid "Warning signs worth a second look, recorded for each attempt."
+msgstr ""
+
+#: includes/Core/App/Strings.php:147
+msgid "Leaderboards"
+msgstr ""
+
+#: includes/Core/App/Strings.php:148
+msgid "Public rankings that candidates choose to join."
+msgstr ""
+
+#: includes/Core/App/Strings.php:149
+msgid "Sell exams with WooCommerce"
+msgstr ""
+
+#: includes/Core/App/Strings.php:150
+msgid "Access for a period, attempt limits, renewals, refunds and passes to many exams."
+msgstr ""
+
+#: includes/Core/App/Strings.php:151
+msgid "LMS bridges"
+msgstr ""
+
+#: includes/Core/App/Strings.php:152
+msgid "Link exams to Tutor LMS, LearnDash and LifterLMS courses."
+msgstr ""
+
+#: includes/Core/App/Strings.php:153
+msgid "Webhooks, LTI 1.3 and API"
+msgstr ""
+
+#: includes/Core/App/Strings.php:154
+msgid "Send results to other systems and launch exams from an LTI platform such as Moodle."
+msgstr ""
+
+#: includes/Core/App/Strings.php:155
+msgid "Multilingual exams"
+msgstr ""
+
+#: includes/Core/App/Strings.php:156
+msgid "One exam in several languages, with one set of results."
+msgstr ""
+
+#: includes/Core/App/Strings.php:157
+msgid "Cohorts, prerequisites, custom fields"
+msgstr ""
+
+#: includes/Core/App/Strings.php:158
+msgid "Group candidates, require one exam before another, and ask for extra details."
+msgstr ""
+
+#: includes/Core/App/Strings.php:159
+msgid "Priority support"
+msgstr ""
+
+#: includes/Core/App/Strings.php:160
+msgid "Faster answers from the team that builds the plugin."
+msgstr ""
+
+#: includes/Core/App/Strings.php:161
+msgid "Get more from Plugixa Exam"
+msgstr ""
+
+#: includes/Core/App/Strings.php:162
+msgid "Live invigilation, analytics, WooCommerce selling, five exam screen designs and more come with Pro."
+msgstr ""
+
+#: includes/Core/App/Strings.php:163
+msgid "Hide this card"
+msgstr ""
+
+#: includes/Core/App/Strings.php:164
+msgid "More apps come with Pro."
+msgstr ""
+
+#: includes/Core/App/Strings.php:165
+msgid "See what Pro adds"
+msgstr ""
+
+#: includes/Core/App/Strings.php:167
 msgid "Fallback"
 msgstr ""
 
@@ -710,7 +918,7 @@ msgstr ""
 #. translators: 1: percentage, 2: points scored, 3: points available.
 #: includes/Core/Frontend/ResultState.php:299
 #, php-format
-msgid "%1$s%% — %2$s of %3$s points"
+msgid "%1$s%% (%2$s of %3$s points)"
 msgstr ""
 
 #: includes/Core/Frontend/ResultState.php:315
@@ -778,13 +986,13 @@ msgstr ""
 #. translators: %s is the exam title.
 #: includes/Modules/Alerts/Frontend/Shortcode.php:129
 #, php-format
-msgid "Your result is ready — %s"
+msgid "Your result is ready: %s"
 msgstr ""
 
 #. translators: %s is the exam title.
 #: includes/Modules/Alerts/Frontend/Shortcode.php:133
 #, php-format
-msgid "A paper needs marking — %s"
+msgid "A paper needs marking: %s"
 msgstr ""
 
 #: includes/Modules/Alerts/Module.php:223
@@ -800,11 +1008,11 @@ msgid "Mark all read"
 msgstr ""
 
 #: includes/Modules/Alerts/Module.php:227
-msgid "A paper needs marking — {name}"
+msgid "A paper needs marking: {name}"
 msgstr ""
 
 #: includes/Modules/Alerts/Module.php:228
-msgid "Your result is ready — {name}"
+msgid "Your result is ready: {name}"
 msgstr ""
 
 #: includes/Modules/Attempts/Calendar/AttemptCalendarSource.php:71
@@ -979,7 +1187,7 @@ msgid "%d still unmarked"
 msgstr ""
 
 #: includes/Modules/Attempts/Module.php:197
-msgid "— no answer given —"
+msgid "(no answer given)"
 msgstr ""
 
 #. translators: %d is a number.
@@ -995,7 +1203,7 @@ msgid "Pass mark %s%"
 msgstr ""
 
 #: includes/Modules/Attempts/Module.php:204
-#: includes/Modules/Exams/Strings.php:175
+#: includes/Modules/Exams/Strings.php:180
 #: includes/Modules/Questions/Strings.php:46
 msgid "Points"
 msgstr ""
@@ -1182,7 +1390,7 @@ msgid "This exam has no questions yet."
 msgstr ""
 
 #: includes/Modules/Attempts/Services/AttemptService.php:133
-msgid "Sorry — this exam could not be started. Please try again, or contact the site administrator."
+msgid "Sorry, this exam could not be started. Please try again, or contact the site administrator."
 msgstr ""
 
 #: includes/Modules/Attempts/Services/AttemptService.php:163
@@ -1266,7 +1474,7 @@ msgstr ""
 
 #: includes/Modules/Calendar/Module.php:88
 #: includes/Modules/Exams/Strings.php:73
-#: includes/Modules/Exams/Strings.php:174
+#: includes/Modules/Exams/Strings.php:179
 msgid "Opens"
 msgstr ""
 
@@ -1456,7 +1664,7 @@ msgid "Delete this design?"
 msgstr ""
 
 #: includes/Modules/Certificates/Module.php:302
-msgid "Certificates already awarded on it are unaffected — each one carries its own frozen copy."
+msgid "Certificates already awarded on it are unaffected. Each one carries its own frozen copy."
 msgstr ""
 
 #: includes/Modules/Certificates/Module.php:303
@@ -1579,7 +1787,7 @@ msgid "The passage has no [[1]] markers yet, so there is nothing to fill in."
 msgstr ""
 
 #: includes/Modules/Cloze/Module.php:185
-msgid "Markers in the passage: {markers} · Blanks defined: {blanks} — these should match."
+msgid "Markers in the passage: {markers} · Blanks defined: {blanks}. These should match."
 msgstr ""
 
 #: includes/Modules/Cloze/Module.php:186
@@ -1790,7 +1998,7 @@ msgid "Privacy"
 msgstr ""
 
 #: includes/Modules/Ecosystem/Module.php:312
-msgid "always on — there is nothing to switch on for a personal-data request to include exam data."
+msgid "always on. Personal-data requests include exam data automatically."
 msgstr ""
 
 #: includes/Modules/Ecosystem/Module.php:313
@@ -1886,7 +2094,7 @@ msgid "No exams yet. Build one from the questions in your bank."
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:30
-msgid "An exam is a set of sections — either a list of questions you choose, or a rule that draws them at random."
+msgid "An exam is a set of sections: either a list of questions you choose, or a rule that draws them at random."
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:33
@@ -1895,7 +2103,7 @@ msgid "General"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:34
-#: includes/Modules/Exams/Strings.php:187
+#: includes/Modules/Exams/Strings.php:192
 #: includes/Modules/Roles/Module.php:119
 msgid "Questions"
 msgstr ""
@@ -1919,7 +2127,7 @@ msgid "Title"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:41
-#: includes/Modules/Exams/Strings.php:183
+#: includes/Modules/Exams/Strings.php:188
 #: includes/Modules/Questions/Strings.php:109
 #: includes/Modules/Roles/Module.php:105
 #: includes/Modules/Subjects/Strings.php:34
@@ -1974,7 +2182,7 @@ msgid "Drawn at random"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:54
-#: includes/Modules/Exams/Strings.php:176
+#: includes/Modules/Exams/Strings.php:181
 msgid "Points per question"
 msgstr ""
 
@@ -2288,7 +2496,7 @@ msgid "No section will produce a question, so this exam cannot be sat."
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:144
-msgid "Published — visible in the catalogue"
+msgid "Published (visible in the catalogue)"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:145
@@ -2329,7 +2537,7 @@ msgid "Only when I say so"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:156
-#: includes/Modules/Exams/Strings.php:173
+#: includes/Modules/Exams/Strings.php:178
 msgid "Never"
 msgstr ""
 
@@ -2384,92 +2592,110 @@ msgid "Nothing selected"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:171
-msgid "As the exam normally would"
+msgid "Every question on this page is selected."
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:172
-msgid "Always"
+msgid "Every question matching these filters is selected."
+msgstr ""
+
+#. translators: %d is a number of questions.
+#: includes/Modules/Exams/Strings.php:174
+#, php-format
+msgid "Select all %d matching"
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:175
+msgid "Clear selection"
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:176
+msgid "As the exam normally would"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:177
-msgid "Leave empty to use each question’s own value."
-msgstr ""
-
-#: includes/Modules/Exams/Strings.php:178
-msgid "Each rule draws its own questions when somebody starts. Leave a filter empty to ignore it."
-msgstr ""
-
-#: includes/Modules/Exams/Strings.php:179
-msgid "Reveal answers"
-msgstr ""
-
-#: includes/Modules/Exams/Strings.php:180
-msgid "Remove section"
-msgstr ""
-
-#: includes/Modules/Exams/Strings.php:181
-msgid "When they submit"
+msgid "Always"
 msgstr ""
 
 #: includes/Modules/Exams/Strings.php:182
+msgid "Leave empty to use each question’s own value."
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:183
+msgid "Each rule draws its own questions when somebody starts. Leave a filter empty to ignore it."
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:184
+msgid "Reveal answers"
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:185
+msgid "Remove section"
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:186
+msgid "When they submit"
+msgstr ""
+
+#: includes/Modules/Exams/Strings.php:187
 msgid "After each question"
 msgstr ""
 
 #. translators: %d is a number.
-#: includes/Modules/Exams/Strings.php:185
+#: includes/Modules/Exams/Strings.php:190
 #, php-format
 msgid "Part %d"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:186
+#: includes/Modules/Exams/Strings.php:191
 msgid "Unattended"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:188
+#: includes/Modules/Exams/Strings.php:193
 msgid "Details"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:189
+#: includes/Modules/Exams/Strings.php:194
 msgid "Presentation"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:190
+#: includes/Modules/Exams/Strings.php:195
 msgid "Up to the time limit"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:191
+#: includes/Modules/Exams/Strings.php:196
 msgid "Until it was closed"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:192
+#: includes/Modules/Exams/Strings.php:197
 msgid "Record focus changes and paste events (never affects the score)"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:193
+#: includes/Modules/Exams/Strings.php:198
 msgid "Unlimited"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:194
+#: includes/Modules/Exams/Strings.php:199
 msgid "View on site"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:195
+#: includes/Modules/Exams/Strings.php:200
 msgid "Who may sit this exam"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:196
+#: includes/Modules/Exams/Strings.php:201
 msgid "Close attempts still open"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:197
+#: includes/Modules/Exams/Strings.php:202
 msgid "When the exam window closes"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:198
+#: includes/Modules/Exams/Strings.php:203
 msgid "Let their own clock run out"
 msgstr ""
 
-#: includes/Modules/Exams/Strings.php:199
+#: includes/Modules/Exams/Strings.php:204
 msgid "0 means unlimited."
 msgstr ""
 
@@ -2496,7 +2722,7 @@ msgid "Choose one or more"
 msgstr ""
 
 #: includes/Modules/ImageChoice/Services/Validator.php:55
-msgid "Mark at least one option correct — nobody can pass this question until you do."
+msgid "Mark at least one option correct. Nobody can pass this question until you do."
 msgstr ""
 
 #: includes/Modules/ImageChoice/Services/Validator.php:71
@@ -2867,7 +3093,7 @@ msgid "Every option needs a picture. Reordering the options moves the pictures w
 msgstr ""
 
 #: includes/Modules/Media/Module.php:168
-msgid "Add the options above first — there is nothing to illustrate until then."
+msgid "Add the options above first. There is nothing to illustrate until then."
 msgstr ""
 
 #: includes/Modules/Media/Module.php:169
@@ -3176,7 +3402,7 @@ msgid "Your question bank is empty. Add a question to get started."
 msgstr ""
 
 #: includes/Modules/Questions/Strings.php:30
-msgid "Every exam is built from questions in this bank — either picked one by one, or drawn at random from a subject."
+msgid "Every exam is built from questions in this bank: either picked one by one, or drawn at random from a subject."
 msgstr ""
 
 #: includes/Modules/Questions/Strings.php:33
@@ -3590,7 +3816,7 @@ msgid "Where each page lives"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:82
-msgid "Every link the plugin builds — catalogue cards, the Start button, results emails — follows whatever you choose here."
+msgid "Every link the plugin builds (catalogue cards, the Start button, results emails) follows whatever you choose here."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:84
@@ -3614,11 +3840,11 @@ msgid "Not set"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:89
-msgid "Not set — the plugin’s own address is used."
+msgid "Not set. The plugin’s own address is used."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:90
-msgid "Not set — this one has no built-in address, so create a page for it."
+msgid "Not set. This one has no built-in address, so create a page for it."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:91
@@ -3626,7 +3852,7 @@ msgid "This page is not published, so the plugin is using its built-in address i
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:92
-msgid "On “{page}”. Nothing links here automatically — add it to your menu."
+msgid "On “{page}”. Nothing links here automatically. Add it to your menu."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:96
@@ -3634,7 +3860,7 @@ msgid "Putting them in your menu"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:97
-msgid "Creating the pages is all this plugin can do on its own — where they appear in your navigation is your theme’s business."
+msgid "Creating the pages is all this plugin can do on its own. Where they appear in your navigation is your theme’s business."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:98
@@ -3666,7 +3892,7 @@ msgid "Number formatting"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:113
-msgid "How every mark, total and percentage is written — on these screens, in emails, on certificates and on the result page a candidate sees."
+msgid "How every mark, total and percentage is written: on these screens, in emails, on certificates and on the result page a candidate sees."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:114
@@ -3723,7 +3949,7 @@ msgid "Brand"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:141
-msgid "Used on both these admin screens and the exam pages candidates see. Primary and its contrast are a pair — the contrast colour is what prints on top of the primary one."
+msgid "Used on both these admin screens and the exam pages candidates see. Primary and its contrast are a pair: the contrast colour is what prints on top of the primary one."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:142
@@ -3739,7 +3965,7 @@ msgid "Marking"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:145
-msgid "Right and wrong, wherever an answer is shown as one or the other — the review screen, the result page, the marking queue."
+msgid "Right and wrong, wherever an answer is shown as one or the other: the review screen, the result page, the marking queue."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:150
@@ -3791,7 +4017,7 @@ msgid "Text"
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:166
-msgid "Switching a feature off hides it and stops its background work. Nothing is deleted — turn it back on and your data is exactly as you left it."
+msgid "Switching a feature off hides it and stops its background work. Nothing is deleted. Turn it back on and your data is exactly as you left it."
 msgstr ""
 
 #: includes/Modules/Settings/Module.php:167
@@ -4023,7 +4249,7 @@ msgid "No tags yet. Tags let a random-draw section narrow which questions it can
 msgstr ""
 
 #: includes/Modules/Tags/Module.php:150
-msgid "Tags are flat labels that cut across subjects — “calculator allowed”, “past paper”, “diagram”."
+msgid "Tags are flat labels that cut across subjects: “calculator allowed”, “past paper”, “diagram”."
 msgstr ""
 
 #: includes/Modules/Tags/Module.php:151
@@ -4047,7 +4273,7 @@ msgid "This page had been open for a while, so nothing was started. Please press
 msgstr ""
 
 #: templates/frontend/parts/exam-body.php:72
-msgid "Sorry — that could not be started. Please check your details and try again."
+msgid "Sorry, that could not be started. Please check your details and try again."
 msgstr ""
 
 #. translators: %d: number of minutes.
@@ -4149,17 +4375,17 @@ msgstr ""
 #. translators: %s: the learner's best score as a percentage, already formatted.
 #: templates/frontend/parts/outcome-badge.php:60
 #, php-format
-msgid "Passed — %s%%"
+msgid "Passed: %s%%"
 msgstr ""
 
 #. translators: %s: the learner's best score as a percentage, already formatted.
 #: templates/frontend/parts/outcome-badge.php:67
 #, php-format
-msgid "Not passed — %s%%"
+msgid "Not passed: %s%%"
 msgstr ""
 
 #: templates/frontend/parts/outcome-badge.php:70
-msgid "Submitted — awaiting result"
+msgid "Submitted, awaiting result"
 msgstr ""
 
 #: templates/frontend/parts/search.php:51
@@ -4203,7 +4429,7 @@ msgid "Your last changes were not saved."
 msgstr ""
 
 #: templates/frontend/take.php:186
-msgid "This page had been open for a long time. The answers below are the ones saved before that — please check them, then save again."
+msgid "This page had been open for a long time. The answers below are the ones saved before that. Please check them, then save again."
 msgstr ""
 
 #. translators: %s: points available.

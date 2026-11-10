@@ -166,7 +166,7 @@ final class FrontendStrings {
 			// Autosave, read aloud by a screen reader as it changes.
 			'saving'            => __( 'Saving…', 'plugixa-exam' ),
 			'saved'             => __( 'Saved', 'plugixa-exam' ),
-			'saveFailed'        => __( "Couldn't save — will retry", 'plugixa-exam' ),
+			'saveFailed'        => __( "Couldn't save. Trying again…", 'plugixa-exam' ),
 			'fullscreenEnter'   => __( 'Go fullscreen', 'plugixa-exam' ),
 			'fullscreenRequiredTitle' => __( 'This exam is taken in fullscreen', 'plugixa-exam' ),
 			'fullscreenRequiredBody'  => __( 'Your time is still running and your answers are saved. Go back to fullscreen to carry on.', 'plugixa-exam' ),
@@ -273,7 +273,7 @@ final class FrontendStrings {
 			 * is handed the whole sentence. Each number arrives already formatted by
 			 * `lib/number.ts`, which is the site's decimal separator, not the reader's.
 			 */
-			'resultScore'       => __( '{percent}% — {scored} of {total} points', 'plugixa-exam' ),
+			'resultScore'       => __( '{percent}% ({scored} of {total} points)', 'plugixa-exam' ),
 
 			/*
 			 * The portal's three groups. These were the LABELS and the identity at once —

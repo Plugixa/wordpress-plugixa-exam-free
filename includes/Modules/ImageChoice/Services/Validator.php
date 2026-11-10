@@ -52,7 +52,7 @@ final class Validator {
 		if ( 0 === $correct ) {
 			return new WP_Error(
 				'plugixa_exam_needs_correct',
-				__( 'Mark at least one option correct — nobody can pass this question until you do.', 'plugixa-exam' )
+				__( 'Mark at least one option correct. Nobody can pass this question until you do.', 'plugixa-exam' )
 			);
 		}
 
