@@ -1,10 +1,10 @@
-=== Plugixa Exam ===
+=== Plugixa Exam – Online Exams, Live Monitoring, Quizzes & Certificates ===
 Contributors: zakaria04, freemius
-Tags: exam, quiz, test, assessment, elearning
+Tags: exam, quiz, assessment, elearning, education
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -335,6 +335,12 @@ plugin ships no default platform and contacts nothing until you register one.
 
 == Changelog ==
 
+= 1.1.4 =
+* Fixed: on a phone, a paper in progress showed only its header bar. The question numbers took the whole width and left the questions none; they now sit above the questions and scroll sideways.
+* Fixed: on a long paper, the question numbers beside it ran past the bottom of the screen and the later ones could not be reached. The column now fits the window, scrolls on its own and keeps the current question in view.
+* Fixed: a submenu of the site's menu opened underneath the bar at the top of a paper in progress.
+* A paper with many questions no longer slows down while it is open. The countdown redrew every question once a second; it now redraws only itself, and an answer shows as soon as it is chosen.
+
 = 1.1.3 =
 * An exam set to refuse blank answers now refuses them: a paper with an unanswered question is not taken while there is time left. Before, the setting was stored and nothing enforced it.
 * Updating a question through the REST API with only some of its fields no longer resets the others. A question could be unpublished this way, and an unpublished question is left off every new paper.
@@ -399,6 +405,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+Fixes a paper in progress on phones and long papers. Nothing to do after updating.
 
 = 1.1.3 =
 A maintenance release. Nothing to do after updating.
