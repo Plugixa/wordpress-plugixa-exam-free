@@ -262,6 +262,12 @@ final class ResultState {
 					null === $pxe_awarded ? '—' : plugixa_exam_format_number( (float) $pxe_awarded ),
 					plugixa_exam_format_number( $pxe_possible )
 				),
+				/*
+				 * Material the question depends on, added by `plugixa_exam_review_item`. Named
+				 * for what it is to this screen and nothing more: free code neither knows nor
+				 * cares which module supplied it.
+				 */
+				'context'     => wp_kses( (string) ( $pxe_item['context_html'] ?? '' ), plugixa_exam_allowed_html( 'stem' ) ),
 				'stem'        => wp_kses( (string) $pxe_item['stem'], plugixa_exam_allowed_html( 'stem' ) ),
 				'explanation' => wp_kses( (string) $pxe_item['explanation'], plugixa_exam_allowed_html( 'stem' ) ),
 				'options'     => $pxe_options,

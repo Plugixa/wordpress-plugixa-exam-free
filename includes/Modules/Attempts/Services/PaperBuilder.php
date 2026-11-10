@@ -94,6 +94,18 @@ final class PaperBuilder {
 			$questions = Shuffle::order( $questions, $seed, 0 );
 		}
 
+		/**
+		 * The paper's questions, before they are frozen.
+		 *
+		 * Runs after the shuffle, so a listener that needs related questions to stay
+		 * together has the last word on their order. An entry may gain keys, which are then
+		 * frozen with the rest of it; `id`, `type`, `section_id` and `points` must survive.
+		 *
+		 * @param array<int, array<string, mixed>> $questions The entries, in paper order.
+		 * @param array<string, mixed>             $exam      The exam row.
+		 */
+		$questions = (array) apply_filters( 'plugixa_exam_paper_questions', $questions, $exam );
+
 		return array(
 			'seed'            => $seed,
 			// Frozen so that editing the exam cannot change the flow of a paper in progress.
@@ -104,6 +116,7 @@ final class PaperBuilder {
 			'require_answer'  => (string) $exam['require_answer'],
 			'review_before_submit' => (bool) $exam['review_before_submit'],
 			'allow_early_finish'   => (bool) $exam['allow_early_finish'],
+			'fullscreen_mode'      => (string) ( $exam['fullscreen_mode'] ?? 'off' ),
 			/*
 			 * Frozen for a different reason from everything above it.
 			 *

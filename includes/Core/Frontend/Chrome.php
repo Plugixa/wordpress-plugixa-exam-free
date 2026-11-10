@@ -66,6 +66,11 @@ final class Chrome {
 	private static string $footer = '';
 
 	/**
+	 * Whether this page drops the site's header and footer. See {@see without_site_chrome()}.
+	 */
+	private static bool $bare = false;
+
+	/**
 	 * Whether the plugin, rather than the theme, writes the opening `<html>`.
 	 *
 	 * ⚠️ THIS IS A QUESTION ABOUT THE THEME, NOT ABOUT THE VIEW. It used to be
@@ -75,7 +80,17 @@ final class Chrome {
 	 * worth having on a block theme.
 	 */
 	public static function emits_document(): bool {
-		return function_exists( 'wp_is_block_theme' ) && wp_is_block_theme();
+		return self::$bare || ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() );
+	}
+
+	/**
+	 * Leave the site's header and footer off this page.
+	 *
+	 * Always through the plugin's own document, because on a classic theme `get_header()` is the
+	 * only thing that opens one and it cannot be asked to leave the header out.
+	 */
+	public static function without_site_chrome(): void {
+		self::$bare = true;
 	}
 
 	/**
@@ -120,8 +135,8 @@ final class Chrome {
 		 * wp_head()." The footer is therefore rendered now and held, not drawn on demand.
 		 * ════════════════════════════════════════════════════════════════════════════════
 		 */
-		$header       = self::part( 'header' );
-		self::$footer = self::part( 'footer' );
+		$header       = self::$bare ? '' : self::part( 'header' );
+		self::$footer = self::$bare ? '' : self::part( 'footer' );
 
 		?>
 		<!DOCTYPE html>

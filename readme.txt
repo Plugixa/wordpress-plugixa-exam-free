@@ -4,7 +4,7 @@ Tags: exam, quiz, assessment, elearning, education
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.1.4
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,8 +29,6 @@ Run your first exam in **3 simple steps**:
 Records live in the plugin's **own database tables**, not in posts and post meta, so the question bank, the attempts list and the dashboard stay fast as your history grows.
 
 ### Exams That Behave Like Exams
-
-The timer is server-side, the paper is frozen when a candidate starts, and answers autosave as they go.
 
 ✅ **Question bank** - seven question types, with explanations, rubrics and pictures
 ✅ **Exam builder** - sections that are a fixed list or a pool with rules, with shuffling
@@ -75,6 +73,7 @@ The timer is server-side, the paper is frozen when a candidate starts, and answe
 * Selling exams through WooCommerce - access for a period, attempts, renewals and refunds
 * Multilingual content - one exam in several languages, with one result set
 * Cohorts, prerequisites and custom fields
+* Reading and listening papers with highlighting, notes and play-limited recordings
 * Practice mode with per-question feedback, and LaTeX rendering
 * Version history, integrity signals and opt-in public leaderboards
 * Webhooks, LTI 1.3 and API tokens
@@ -335,6 +334,15 @@ plugin ships no default platform and contacts nothing until you register one.
 
 == Changelog ==
 
+= 1.2.0 =
+* Fixed: the exam's Fullscreen setting did nothing. "Offered" now gives the candidate a button, and "Required" covers the paper until they go fullscreen and again if they leave. A device that cannot go fullscreen carries on as normal.
+* New: a logo for the header of a paper in progress, under Settings.
+* Fixed: the last answers saved as a tab closes are now far more likely to arrive.
+* New in premium: reading and listening papers. A passage stays on screen beside the questions that read from it, candidates can highlight it and keep notes, and it can carry a recording with a limit on plays and, if you choose, no pausing.
+* New in premium: per exam, hide the site's menu during the sitting, and deter copying, right-click and printing.
+* New in premium: a sample reading and listening paper in the demo dataset.
+* Premium: an expiry reminder no longer goes out straight after buying access shorter than the reminder period.
+
 = 1.1.4 =
 * Fixed: on a phone, a paper in progress showed only its header bar. The question numbers took the whole width and left the questions none; they now sit above the questions and scroll sideways.
 * Fixed: on a long paper, the question numbers beside it ran past the bottom of the screen and the later ones could not be reached. The column now fits the window, scrolls on its own and keeps the current question in view.
@@ -405,6 +413,9 @@ plugin ships no default platform and contacts nothing until you register one.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+The Fullscreen setting now takes effect. Check any exam set to Required or Offered before updating a live site.
 
 = 1.1.4 =
 Fixes a paper in progress on phones and long papers. Nothing to do after updating.

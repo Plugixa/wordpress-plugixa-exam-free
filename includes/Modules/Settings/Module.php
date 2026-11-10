@@ -119,6 +119,9 @@ final class Module implements ModuleInterface {
 				'thousandsSeparatorHelp' => __( 'Leave empty for no grouping.', 'plugixa-exam' ),
 				'numberPreview'          => __( 'Preview', 'plugixa-exam' ),
 
+				'settingsLogo'        => __( 'Exam logo', 'plugixa-exam' ),
+				'settingsLogoHelp'    => __( "Shown in the exam's header band, beside its title.", 'plugixa-exam' ),
+				'settingsLogoRemove'  => __( 'Remove logo', 'plugixa-exam' ),
 				'settingsColours'     => __( 'Colours', 'plugixa-exam' ),
 
 				/*

@@ -230,6 +230,11 @@ final class Settings {
 			$clean[ $key ] = $colour;
 		}
 
+		// Printed as an image's address on a public page, so it is a web address or nothing.
+		if ( array_key_exists( 'runner_logo', $clean ) ) {
+			$clean['runner_logo'] = esc_url_raw( is_string( $clean['runner_logo'] ) ? trim( $clean['runner_logo'] ) : '', array( 'http', 'https' ) );
+		}
+
 		foreach ( $clean as $key => $value ) {
 			if ( is_scalar( $value ) && ! is_bool( $value ) ) {
 				$clean[ $key ] = sanitize_text_field( (string) $value );
@@ -335,6 +340,7 @@ final class Settings {
 
 			// Colour scheme, consumed by the admin MUI theme and the frontend CSS
 			// variables so both render the same exam.
+			'runner_logo'         => '',
 			'color_primary'       => '#1976d2',
 			'color_primary_contrast' => '#ffffff',
 			'color_accent'        => '#9c27b0',

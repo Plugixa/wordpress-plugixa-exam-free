@@ -145,6 +145,7 @@ require plugixa_exam_get_template( 'parts/header.php' );
 	 */
 	?>
 	data-math="<?php echo esc_attr( $pxe_settings->bool( 'math_rendering_enabled', true ) ? '1' : '0' ); ?>"
+	data-logo="<?php echo esc_url( $pxe_settings->str( 'runner_logo', '' ) ); ?>"
 >
 	<?php
 	/*
@@ -228,6 +229,14 @@ require plugixa_exam_get_template( 'parts/header.php' );
 				$pxe_response = $pxe_question['response'];
 				?>
 				<li class="pxe-question" id="<?php echo esc_attr( $pxe_field_id ); ?>">
+					<?php
+					/**
+					 * Print material a question depends on, above it, on the no-JavaScript paper.
+					 *
+					 * @param array<string, mixed> $pxe_question The question, as the runner receives it.
+					 */
+					do_action( 'plugixa_exam_no_js_before_question', $pxe_question );
+					?>
 					<div class="pxe-question__head">
 						<span class="pxe-question__number">
 							<?php

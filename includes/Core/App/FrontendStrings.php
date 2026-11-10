@@ -167,6 +167,9 @@ final class FrontendStrings {
 			'saving'            => __( 'Saving…', 'plugixa-exam' ),
 			'saved'             => __( 'Saved', 'plugixa-exam' ),
 			'saveFailed'        => __( "Couldn't save — will retry", 'plugixa-exam' ),
+			'fullscreenEnter'   => __( 'Go fullscreen', 'plugixa-exam' ),
+			'fullscreenRequiredTitle' => __( 'This exam is taken in fullscreen', 'plugixa-exam' ),
+			'fullscreenRequiredBody'  => __( 'Your time is still running and your answers are saved. Go back to fullscreen to carry on.', 'plugixa-exam' ),
 			'offline'           => __( 'The site could not be reached.', 'plugixa-exam' ),
 
 			/*

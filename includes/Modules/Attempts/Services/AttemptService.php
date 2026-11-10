@@ -244,27 +244,43 @@ final class AttemptService {
 
 		unset( $reveal );
 
+		$runner_paper = array(
+			'mode'                 => (string) ( $paper['mode'] ?? 'exam' ),
+			'layout'               => (string) ( $paper['layout'] ?? 'single_page' ),
+			'require_answer'       => (string) ( $paper['require_answer'] ?? 'off' ),
+			'review_before_submit' => (bool) ( $paper['review_before_submit'] ?? true ),
+			'allow_early_finish'   => (bool) ( $paper['allow_early_finish'] ?? true ),
+			'fullscreen_mode'      => (string) ( $paper['fullscreen_mode'] ?? 'off' ),
+			'practice_reveal'      => (string) ( $paper['practice_reveal'] ?? 'on_submit' ),
+			/*
+			 * Read from the FROZEN paper, like everything else here, so a runner never
+			 * starts watching somebody who began under terms that said it would not.
+			 *
+			 * The client uses this only to decide whether to attach its listeners. The
+			 * server decides what is STORED, and applies a stricter test — see the
+			 * premium `Recorder::capturing()`. A site that turns tracking off mid-paper
+			 * therefore stops recording immediately, even though runners already open
+			 * go on offering signals nothing writes down.
+			 */
+			'track_integrity'      => (bool) ( $paper['track_integrity'] ?? false ),
+		);
+
+		/**
+		 * What the runner is told about the paper as a whole.
+		 *
+		 * The sibling of `plugixa_exam_runner_question`, under the same contract: nothing a
+		 * candidate may not read. Whatever is added here reaches the page source of a live
+		 * exam, so an answer, a transcript or a private file path must never be.
+		 *
+		 * @param array<string, mixed> $runner_paper What the runner will receive.
+		 * @param array<string, mixed> $paper        The whole frozen paper.
+		 * @param array<string, mixed> $attempt      The attempt row.
+		 */
+		$runner_paper = (array) apply_filters( 'plugixa_exam_runner_paper', $runner_paper, $paper, $attempt );
+
 		return array(
 			'attempt'   => $this->public_attempt( $attempt ),
-			'paper'     => array(
-				'mode'                 => (string) ( $paper['mode'] ?? 'exam' ),
-				'layout'               => (string) ( $paper['layout'] ?? 'single_page' ),
-				'require_answer'       => (string) ( $paper['require_answer'] ?? 'off' ),
-				'review_before_submit' => (bool) ( $paper['review_before_submit'] ?? true ),
-				'allow_early_finish'   => (bool) ( $paper['allow_early_finish'] ?? true ),
-				'practice_reveal'      => (string) ( $paper['practice_reveal'] ?? 'on_submit' ),
-				/*
-				 * Read from the FROZEN paper, like everything else here, so a runner never
-				 * starts watching somebody who began under terms that said it would not.
-				 *
-				 * The client uses this only to decide whether to attach its listeners. The
-				 * server decides what is STORED, and applies a stricter test — see the
-				 * premium `Recorder::capturing()`. A site that turns tracking off mid-paper
-				 * therefore stops recording immediately, even though runners already open
-				 * go on offering signals nothing writes down.
-				 */
-				'track_integrity'      => (bool) ( $paper['track_integrity'] ?? false ),
-			),
+			'paper'     => $runner_paper,
 			'questions' => $rendered,
 		);
 	}

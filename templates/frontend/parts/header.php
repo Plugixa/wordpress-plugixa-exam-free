@@ -68,6 +68,18 @@ $pxe_modifier = $pxe_modifier ?? '';
  */
 $pxe_is_runner = 'pxe--runner' === $pxe_modifier;
 
+/**
+ * Whether the exam runner shows the site's header and footer.
+ *
+ * Yes by default, for the reasons above. An exam meant to feel like a test centre can say no.
+ *
+ * @param bool                 $show Whether to show them.
+ * @param array<string, mixed> $exam The exam row.
+ */
+if ( $pxe_is_runner && ! apply_filters( 'plugixa_exam_runner_site_chrome', true, (array) ( $pxe_exam ?? array() ) ) ) {
+	\PlugixaExam\Core\Frontend\Chrome::without_site_chrome();
+}
+
 \PlugixaExam\Core\Frontend\Chrome::open( $pxe_is_runner ? 'plugixa-exam-runner' : '', $pxe_title );
 
 /*

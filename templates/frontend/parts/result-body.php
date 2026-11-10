@@ -105,6 +105,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<span class="pxe-review__points"><?php echo esc_html( $pxe_item['points'] ); ?></span>
 					</div>
 
+					<?php if ( '' !== $pxe_item['context'] ) : ?>
+						<div class="pxe-review__context pxe-prose">
+							<?php echo wp_kses( $pxe_item['context'], plugixa_exam_allowed_html( 'stem' ) ); ?>
+						</div>
+					<?php endif; ?>
+
 					<div class="pxe-question__stem pxe-prose">
 						<?php echo wp_kses( $pxe_item['stem'], plugixa_exam_allowed_html( 'stem' ) ); ?>
 					</div>
